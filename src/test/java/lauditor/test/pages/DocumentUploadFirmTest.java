@@ -1,0 +1,3892 @@
+package lauditor.test.pages;
+
+import java.awt.AWTException;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.microsoft.schemas.office.visio.x2012.main.DocumentSettingsType;
+
+import lauditor.baseClass.BaseClass;
+import net.bytebuddy.asm.Advice.OffsetMapping.Target.AbstractReadOnlyAdapter;
+
+public class DocumentUploadFirmTest extends BaseClass {
+
+	@Test(dataProvider = "getData", priority = 0)
+	public void DocumentUploadWithoutEditData(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.viewChanges();
+
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+		}
+
+	}
+
+	@Test(dataProvider = "getData1", priority = 1)
+	public void DocumentUploadWithoutEditDataCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.uploadCancel();
+
+		} finally {
+			// TODO: handle finally clause
+		}
+
+	}
+
+	@Test(dataProvider = "getData2", priority = 2)
+	public void DocumentUploadWithoutEditEnableDownload(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.viewChanges();
+
+		} finally {
+			// TODO: handle finally clause
+		}
+
+	}
+
+	@Test(dataProvider = "getData3", priority = 3)
+	public void DocumentUploadWithoutEditEnableDownloadCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.uploadCancel();
+			// documentUploadFirmpages.uploadSubmitButton();
+			// documentUploadFirmpages.viewChanges();
+
+		} finally {
+			// TODO: handle finally clause
+		}
+
+	}
+
+	@Test(dataProvider = "getData4", priority = 4)
+	public void DocumentUploadWithoutEditEnableDownloadUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups1 = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups1);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(4000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData5", priority = 5)
+	public void DocumentUploadWithoutEditEnableDownloadXbutton(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(3000);
+			documentUploadFirmpages.xiconClose();
+
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData6", priority = 6)
+	public void DocumentUploadWithoutDisableDownload(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.viewChanges();
+
+		} finally {
+			// TODO: handle finally clause
+		}
+
+	}
+
+	@Test(dataProvider = "getData7", priority = 7)
+	public void DocumentUploadWithoutDisableDownloadCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.uploadCancel();
+
+		} finally {
+			// TODO: handle finally clause
+		}
+
+	}
+
+	@Test(dataProvider = "getData8", priority = 8)
+	public void DocumentUploadWithoutEditDisableDownloadUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.uploadMore();
+			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData9", priority = 9)
+	public void DocumentUploadWithoutEditDisableDownloadXbutton(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(3000);
+			documentUploadFirmpages.xiconClose();
+
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData10", priority = 10)
+	public void DocumentUploadWithoutEditCategories(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.CategoriesField(input.get("categories"));
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData11", priority = 11)
+	public void DocumentUploadWithoutEditCategoriesUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.CategoriesField(input.get("categories"));
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(3000);
+			documentUploadFirmpages.uploadMore();
+
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData12", priority = 12)
+	public void DocumentUploadWithoutEditCategoriesCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.CategoriesField(input.get("categories"));
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.uploadCancel();
+
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData13", priority = 13)
+	public void DocumentUploadEditDocumentName(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "documName";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDocumentNameField(intArray1, desc);
+			Thread.sleep(3000);
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData14", priority = 14)
+	public void DocumentUploadEditDocumentNameCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "documName";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDocumentNameField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			documentUploadFirmpages.viewChanges();
+//			documentUploadFirmpages.scrollDownViewChanges();
+//			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData15", priority = 15)
+	public void DocumentUploadEditDocumentNameUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "documName";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDocumentNameField(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+			documentUploadFirmpages.leftsideDocument();
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData16", priority = 16)
+	public void DocumentUploadEditDescription(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "description";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDescriptionField(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData17", priority = 17)
+	public void DocumentUploadEditDescriptionCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "description";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDescriptionField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			documentUploadFirmpages.viewChanges();
+//			documentUploadFirmpages.scrollDownViewChanges();
+//			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData18", priority = 18)
+	public void DocumentUploadEditDescriptionUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "description";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDescriptionField(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+			documentUploadFirmpages.leftsideDocument();
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData19", priority = 19)
+	public void DocumentUploadEditDocumentNameandDescription(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Integer[] intArray1 = new Integer[] { 0, 2, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "descp" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDescriptionFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData20", priority = 20)
+	public void DocumentUploadEditDocumentNameandDescriptionCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Integer[] intArray1 = new Integer[] { 0, 2, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "descp" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDescriptionFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadCancel();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData21", priority = 21)
+	public void DocumentUploadEditDocumentNameandDescriptionUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Integer[] intArray1 = new Integer[] { 0, 2, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "descp" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDescriptionFields(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+			documentUploadFirmpages.leftsideDocument();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData22", priority = 22)
+	public void DocumentUploadEditDocumentNameandDescriptionEnableDownload(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 2, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "descp" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDescriptionFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData23", priority = 23)
+	public void DocumentUploadEditDocumentNameandDescriptionEnableDownloadCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 2, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "descp" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDescriptionFields(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			documentUploadFirmpages.viewChanges();
+//			documentUploadFirmpages.scrollDownViewChanges();
+//			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData24", priority = 24)
+	public void DocumentUploadEditDocumentNameandDescriptionEnableDownloadUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 2, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "descp" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDescriptionFields(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			documentUploadFirmpages.viewChanges();
+//			documentUploadFirmpages.scrollDownViewChanges();
+//			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData25", priority = 25)
+	public void DocumentUploadEditDocumentNameandDescriptionDisableDownload(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 2, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "descp" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDescriptionFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData26", priority = 26)
+	public void DocumentUploadEditDocumentNameandDescriptionDisableDownloadCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 2, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "descp" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDescriptionFields(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			documentUploadFirmpages.viewChanges();
+//			documentUploadFirmpages.scrollDownViewChanges();
+//			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData27", priority = 27)
+	public void DocumentUploadEditDocumentNameandDescriptionDisableDownloadUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 2, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "descp" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDescriptionFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+			documentUploadFirmpages.leftsideDocument();
+			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData28", priority = 28)
+	public void DocumentUploadEditDocumentNameandExpiryDate(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Integer[] intArray1 = new Integer[] { 2, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.leftsideDocument();
+			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData29", priority = 29)
+	public void DocumentUploadEditDocumentNameandExpiryDateCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Integer[] intArray1 = new Integer[] { 2, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			Thread.sleep(2000);
+//			documentUploadFirmpages.viewChanges();
+//			documentUploadFirmpages.scrollDown();
+//			documentUploadFirmpages.leftsideDocument();
+//			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData30", priority = 30)
+	public void DocumentUploadEditDocumentNameandExpiryDateUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Integer[] intArray1 = new Integer[] { 2, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+			documentUploadFirmpages.leftsideDocument();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData31", priority = 31)
+	public void DocumentUploadEditDocumentNameandExpiryDateEnableDownload(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			Integer[] intArray1 = new Integer[] { 1, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDown();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData32", priority = 32)
+	public void DocumentUploadEditDocumentNameandExpiryDateEnableDownloadCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			Integer[] intArray1 = new Integer[] { 1, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			Thread.sleep(2000);
+//			documentUploadFirmpages.viewChanges();
+//			documentUploadFirmpages.scrollDown();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData33", priority = 33)
+	public void DocumentUploadEditDocumentNameandExpiryDateEnableDownloadUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			Integer[] intArray1 = new Integer[] { 1, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+			documentUploadFirmpages.leftsideDocument();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData34", priority = 34)
+	public void DocumentUploadEditDocumentNameandExpiryDateDisableDownload(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 1, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+			documentUploadFirmpages.leftsideDocument();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData35", priority = 35)
+	public void DocumentUploadEditDocumentNameandExpiryDateDisableDownloadCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 1, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			Thread.sleep(2000);
+//			documentUploadFirmpages.uploadMore();
+//			documentUploadFirmpages.scrollUP();
+//			documentUploadFirmpages.leftsideDocument();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData36", priority = 36)
+	public void DocumentUploadEditDocumentNameandExpiryDateDisableDownloadUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 1, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+			documentUploadFirmpages.leftsideDocument();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData37", priority = 37)
+	public void DocumentUploadEditDocumentNameandExpiryDateDisableDownloadXButton(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 1, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "documName", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDocumentNameandDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.xiconClose();
+			documentUploadFirmpages.leftsideDocument();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData38", priority = 38)
+	public void DocumentUploadEditDescriptionandExpiryDate(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Integer[] intArray1 = new Integer[] { 0, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDescriptionandExpirationDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollUP();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData39", priority = 39)
+	public void DocumentUploadEditDescriptionandExpiryDateCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Integer[] intArray1 = new Integer[] { 0, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDescriptionandExpirationDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			Thread.sleep(2000);
+//			documentUploadFirmpages.viewChanges();
+//			documentUploadFirmpages.scrollUP();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData40", priority = 40)
+	public void DocumentUploadEditDescriptionandExpiryDateUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Integer[] intArray1 = new Integer[] { 0, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDescriptionandExpirationDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData41", priority = 41)
+	public void DocumentUploadEditDescriptionandExpiryDateEnableDownload(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDescriptionandExpirationDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData42", priority = 42)
+	public void DocumentUploadEditDescriptionandExpiryDateEnableDownloadCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDescriptionandExpirationDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			Thread.sleep(2000);
+//			documentUploadFirmpages.uploadMore();
+//			documentUploadFirmpages.scrollUP();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData43", priority = 43)
+	public void DocumentUploadEditDescriptionandExpiryDateEnableDownloadUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDescriptionandExpirationDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData44", priority = 44)
+	public void DocumentUploadEditDescriptionandExpiryDateDisableDownload(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDescriptionandExpirationDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData45", priority = 45)
+	public void DocumentUploadEditDescriptionandExpiryDateDisableDownloadCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDescriptionandExpirationDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			Thread.sleep(2000);
+//			documentUploadFirmpages.uploadMore();
+//			documentUploadFirmpages.scrollUP();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData46", priority = 46)
+	public void DocumentUploadEditDescriptionandExpiryDateDisableDownloadUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 2 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editDescriptionandExpirationDateFields(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData47", priority = 47)
+	public void DocumentUploadEditAllFields(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 1, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][3];
+			String[] dn = { "documName", "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 3; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editAllField(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData48", priority = 48)
+	public void DocumentUploadEditAllFieldsCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 1, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][3];
+			String[] dn = { "documName", "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 3; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editAllField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			Thread.sleep(2000);
+//			documentUploadFirmpages.viewChanges();
+//			documentUploadFirmpages.scrollDownViewChanges();
+//			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData49", priority = 49)
+	public void DocumentUploadEditAllFieldsUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 1, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][3];
+			String[] dn = { "documName", "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 3; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editAllField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData50", priority = 50)
+	public void DocumentUploadEditAllFieldsEnableDownload(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			Integer[] intArray1 = new Integer[] { 1, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][3];
+			String[] dn = { "documName", "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 3; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editAllField(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData51", priority = 51)
+	public void DocumentUploadEditAllFieldsEnableDownloadCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 1, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][3];
+			String[] dn = { "documName", "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 3; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editAllField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData52", priority = 52)
+	public void DocumentUploadEditAllFieldsEnableDownloadUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 1, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][3];
+			String[] dn = { "documName", "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 3; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editAllField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData53", priority = 53)
+	public void DocumentUploadEditAllFieldsDisableDownload(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 1, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][3];
+			String[] dn = { "documName", "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 3; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editAllField(intArray1, desc);
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData54", priority = 54)
+	public void DocumentUploadEditAllFieldsDisableDownloadCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 1, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][3];
+			String[] dn = { "documName", "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 3; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editAllField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			Thread.sleep(2000);
+//			documentUploadFirmpages.viewChanges();
+//			documentUploadFirmpages.scrollDownViewChanges();
+//			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData55", priority = 55)
+	public void DocumentUploadEditAllFieldsDisableDownloadUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			Integer[] intArray1 = new Integer[] { 0, 1, 3 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][3];
+			String[] dn = { "documName", "descp", "date" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 3; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.editAllField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			documentUploadFirmpages.scrollUP();
+			Thread.sleep(3000);
+
+		} finally { // documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData56", priority = 56)
+	public void DocumentUploadEditDocumentNameSelectAllAddTag(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			Thread.sleep(3000);
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData57", priority = 57)
+	public void DocumentUploadEditDocumentNameSelectAllAddTagCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			Thread.sleep(3000);
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			Thread.sleep(2000);
+//			documentUploadFirmpages.viewChanges();
+//			documentUploadFirmpages.scrollDownViewChanges();
+//			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData58", priority = 58)
+	public void DocumentUploadEditDocumentNameSelectAllAddTagXButtonClose(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			Thread.sleep(3000);
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.removeTags();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData59", priority = 59)
+	public void DocumentUploadWithoutEditDataAddTagSelectAll(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			Thread.sleep(3000);
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+		}
+
+	}
+
+	@Test(dataProvider = "getData60", priority = 60)
+	public void DocumentUploadWithoutEditDataAddTagSelectAllCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			Thread.sleep(3000);
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			Thread.sleep(2000);
+//			documentUploadFirmpages.viewChanges();
+//			documentUploadFirmpages.scrollDownViewChanges();
+//			Thread.sleep(3000);
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+		}
+
+	}
+
+	@Test(dataProvider = "getData61", priority = 61)
+	public void DocumentUploadWithoutEditDataEnableDownloadAddTagSelectAll(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			Thread.sleep(3000);
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+		}
+
+	}
+
+	@Test(dataProvider = "getData62", priority = 62)
+	public void DocumentUploadWithoutEditDataEnableDownloadAddTagSelectAllCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			Thread.sleep(3000);
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			Thread.sleep(2000);
+//			documentUploadFirmpages.viewChanges();
+//			documentUploadFirmpages.scrollDownViewChanges();
+//			Thread.sleep(3000);
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+		}
+
+	}
+
+	@Test(dataProvider = "getData63", priority = 63)
+	public void DocumentUploadWithoutEditDataEnableDownloadAddTagSelectAllUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			Thread.sleep(3000);
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			Thread.sleep(3000);
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+		}
+
+	}
+
+	@Test(dataProvider = "getData64", priority = 64)
+	public void DocumentUploadWithoutEditDataCatetoriesEnableDownloadAddTagSelectAll(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.CategoriesField(input.get("categories"));
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			Thread.sleep(3000);
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			Thread.sleep(3000);
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+		}
+
+	}
+
+	@Test(dataProvider = "getData65", priority = 65)
+	public void DocumentUploadWithoutEditDataCatetoriesEnableDownloadAddTagSelectAllCancel(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.CategoriesField(input.get("categories"));
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			Thread.sleep(3000);
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			Thread.sleep(2000);
+//			documentUploadFirmpages.uploadMore();
+//			Thread.sleep(3000);
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+		}
+
+	}
+
+	@Test(dataProvider = "getData66", priority = 66)
+	public void DocumentUploadWithoutEditDataDisableDownloadAddTagSelectAll(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			Thread.sleep(3000);
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+		}
+
+	}
+
+	@Test(dataProvider = "getData67", priority = 67)
+	public void DocumentUploadWithoutEditDataDisableDownloadAddTagSelectAllCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			Thread.sleep(3000);
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			documentUploadFirmpages.uploadCancel();
+
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+		}
+
+	}
+
+	@Test(dataProvider = "getData68", priority = 68)
+	public void DocumentUploadWithoutEditDataDisableDownloadAddTagSelectAllUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			Thread.sleep(3000);
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmpages.leftsideDocument();
+		}
+
+	}
+
+	@Test(dataProvider = "getData69", priority = 69)
+	public void DocumentUploadEditDocumentNameSelectAddTagSelectAll(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.documentEdit();
+			Thread.sleep(3000);
+
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "documName";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDocumentNameField(intArray1, desc);
+			Thread.sleep(3000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData70", priority = 70)
+	public void DocumentUploadEditDocumentNameSelectAddTagSelectAllCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.documentEdit();
+			Thread.sleep(3000);
+
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "documName";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDocumentNameField(intArray1, desc);
+			Thread.sleep(3000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			// documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData71", priority = 71)
+	public void DocumentUploadEditDocumentNameEnableDownloadSelectAddTagSelectAll(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.documentEdit();
+			Thread.sleep(3000);
+
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "documName";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDocumentNameField(intArray1, desc);
+			Thread.sleep(3000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+//			documentUploadFirmpages.uploadSubmitButton();
+//			documentUploadFirmpages.viewChanges();
+//			documentUploadFirmpages.scrollDownViewChanges();
+//			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData72", priority = 72)
+	public void DocumentUploadEditDocumentNameEnableDownloadSelectAddTagSelectAllCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.documentEdit();
+			Thread.sleep(3000);
+
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "documName";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDocumentNameField(intArray1, desc);
+			Thread.sleep(3000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData73", priority = 73)
+	public void DocumentUploadEditDocumentNameEnableDownloadSelectAddTagSelectAllUploadMore(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.documentEdit();
+			Thread.sleep(3000);
+
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "documName";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDocumentNameField(intArray1, desc);
+			Thread.sleep(3000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.uploadMore();
+			Thread.sleep(2000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData74", priority = 74)
+	public void DocumentUploadEditDocumentNameDisableDownloadSelectAddTagSelectAll(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.documentEdit();
+			Thread.sleep(3000);
+
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "documName";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDocumentNameField(intArray1, desc);
+			Thread.sleep(3000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(2000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData75", priority = 75)
+	public void DocumentUploadEditDocumentNameDisableDownloadSelectAddTagSelectAllCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.documentEdit();
+			Thread.sleep(3000);
+
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "documName";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDocumentNameField(intArray1, desc);
+			Thread.sleep(3000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData76", priority = 76)
+	public void DocumentUploadEditDocumentNameDisableDownloadSelectAddTagSelectAllUploadMore(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.documentEdit();
+			Thread.sleep(3000);
+
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "documName";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDocumentNameField(intArray1, desc);
+			Thread.sleep(3000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.uploadMore();
+			Thread.sleep(2000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData77", priority = 77)
+	public void DocumentUploadEditDescriptionSelectAllTag(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "description";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDescriptionField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(2000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData78", priority = 78)
+	public void DocumentUploadEditDescriptionSelectAllTagCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "description";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDescriptionField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData79", priority = 79)
+	public void DocumentUploadEditDescriptionSelectAllTagUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "description";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDescriptionField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.uploadMore();
+			Thread.sleep(2000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData80", priority = 80)
+	public void DocumentUploadEditDescriptionEnableDownloadSelectAllTag(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "description";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDescriptionField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(2000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData81", priority = 81)
+	public void DocumentUploadEditDescriptionEnableDownloadSelectAllTagCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "description";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDescriptionField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData82", priority = 82)
+	public void DocumentUploadEditDescriptionEnableDownloadSelectAllTagUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.enableDownload();
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "description";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDescriptionField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(3000);
+			documentUploadFirmpages.uploadMore();
+			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData83", priority = 83)
+	public void DocumentUploadEditDescriptionDisableDownloadSelectAllTag(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "description";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDescriptionField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(3000);
+			documentUploadFirmpages.viewChanges();
+			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+	@Test(dataProvider = "getData83", priority = 83)
+	public void DocumentUploadEditDescriptionDisableDownloadSelectAllTagCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "description";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDescriptionField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadCancel();
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+	
+	@Test(dataProvider = "getData84", priority = 84)
+	public void DocumentUploadEditDescriptionDisableDownloadSelectAllTagUploadMore(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			Thread.sleep(3000);
+			documentUploadFirmpages.disableDownload();
+			documentUploadFirmpages.documentEdit();
+			Integer[] intArray1 = new Integer[] { 0, 1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[] desc = new String[count];
+			String dn = "description";
+			for (int ii = 0; ii < count; ii++) {
+				desc[ii] = input.get(dn + ii);
+			}
+
+			documentUploadFirmpages.editDescriptionField(intArray1, desc);
+			Thread.sleep(2000);
+			documentUploadFirmpages.addTagsButton();
+			documentUploadFirmpages.selectAllCheckbox();
+			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(3000);
+			documentUploadFirmpages.uploadMore();
+			Thread.sleep(3000);
+
+		} finally {
+			// documentUploadFirmPage.leftsideDocument();
+		}
+	}
+
+//******************************* # Data Provider Classes # ***********************************//
+
+	@DataProvider
+	public Object[][] getData() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(0) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData1() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(1) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData2() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(2) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData3() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(3) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData4() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(4) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData5() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(5) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData6() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(6) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData7() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(7) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData8() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(8) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData9() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(9) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData10() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(10) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData11() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(11) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData12() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(12) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData13() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(13) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData14() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(14) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData15() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(15) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData16() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(16) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData17() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(17) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData18() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(18) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData19() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(19) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData20() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(20) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData21() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(21) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData22() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(22) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData23() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(23) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData24() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(24) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData25() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(25) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData26() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(26) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData27() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(27) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData28() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(28) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData29() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(29) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData30() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(30) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData31() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(31) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData32() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(32) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData33() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(33) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData34() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(34) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData35() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(35) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData36() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(36) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData37() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(37) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData38() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(38) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData39() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(39) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData40() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(40) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData41() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(41) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData42() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(42) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData43() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(43) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData44() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(44) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData45() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(45) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData46() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(46) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData47() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(47) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData48() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(48) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData49() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(49) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData50() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(50) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData51() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(51) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData52() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(52) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData53() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(53) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData54() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(54) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData55() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(55) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData56() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(56) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData57() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(57) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData58() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(58) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData59() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(59) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData60() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(60) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData61() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(61) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData62() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(62) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData63() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(63) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData64() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(64) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData65() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(65) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData66() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(66) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData67() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(67) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData68() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(68) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData69() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(69) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData70() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(70) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData71() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(71) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData72() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(72) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData73() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(73) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData74() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(74) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData75() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(75) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData76() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(76) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData77() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(77) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData78() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(78) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData79() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(79) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData80() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(80) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData81() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(81) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData82() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(82) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData83() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(83) } };
+
+	}
+	
+	@DataProvider
+	public Object[][] getData84() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(84) } };
+
+	}
+
+}
