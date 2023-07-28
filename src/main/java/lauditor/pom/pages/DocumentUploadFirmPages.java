@@ -142,17 +142,17 @@ public class DocumentUploadFirmPages extends AbstractClass {
 	// Tags
 	@FindBy(xpath = "(//input[@id='caseType'])[3]")
 	WebElement tagInput;
-	
+
 	// Add Button
-		@FindBy(xpath = "//button[@class='btn btn-default btnsave']")
-		WebElement addButtonForAddTags;
+	@FindBy(xpath = "//button[@class='btn btn-default btnsave']")
+	WebElement addButtonForAddTags;
 
 	public void addTagsButton() {
 		visibilityOfAllElements(addTagsTab);
 		addTagsTab.click();
 	}
 
-	public void selectAllCheckbox() throws InterruptedException  {
+	public void selectAllCheckbox() throws InterruptedException {
 		visibilityOfAllElements(selectAllCheckbox);
 		selectAllCheckbox.click();
 		pageDown();
@@ -361,8 +361,8 @@ public class DocumentUploadFirmPages extends AbstractClass {
 	List<WebElement> editDocuments;
 
 	// SubmitBtnEdit
-	//@FindBy(xpath = "//button[@class='btn btn-default btnsave']")
-	@FindBy(xpath="(//button[normalize-space()='Save'])[1]")
+	// @FindBy(xpath = "//button[@class='btn btn-default btnsave']")
+	@FindBy(xpath = "(//button[normalize-space()='Save'])[1]")
 	WebElement editSave;
 
 	@FindBy(xpath = "//i[@class='fa fa-times-circle']")
@@ -574,6 +574,7 @@ public class DocumentUploadFirmPages extends AbstractClass {
 		js.executeScript("window.scrollBy(0,-600)");
 		// js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 	}
+
 	public void scrollTagSave() throws InterruptedException {
 		Thread.sleep(5000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
