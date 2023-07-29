@@ -5,8 +5,8 @@
     <classes>
       <class name="lauditor.test.pages.DocumentUploadFirmTest">
         <methods>
-          <include name="DocumentUploadEditDocumentNameandExpiryDateDisableDownloadSelectAllTagsCancel"/>
           <include name="launchApplication"/>
+          <include name="DocumentUploadEditAllFieldsSelectAllTagsCancel"/>
           <include name="down"/>
         </methods>
       </class> <!-- lauditor.test.pages.DocumentUploadFirmTest -->
