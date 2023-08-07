@@ -30,6 +30,12 @@ public class AbstractClass {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
 	}
+	
+	public void scrollUp() throws InterruptedException {
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,46)");
+	}
 
 	public void visibilityOfElementWait(WebElement element) {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));

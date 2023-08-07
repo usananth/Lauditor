@@ -13,21 +13,21 @@
 	},
 	{
 		"Comment": "TestCase 2.DocumentUploadWithoutEditEnableDownload",
-		"selectGroup1": "My Test",
 		"selectGroup2": "Dev Environmental Testing",
-		"filePath": "D:\\SampleImages"
+		"filePath": "D:\\SampleImages1"
 	},
 	{
 		"Comment": "TestCase 3.DocumentUploadWithoutEditEnableDownloadCancel",
 		"selectGroup1": "My Test",
 		"selectGroup2": "Dev Environmental Testing",
-		"filePath": "D:\\SampleImages"
+		"filePath": "D:\\SampleImages1"
 	},
 	{
 		"Comment": "TestCase 4.DocumentUploadWithoutEditEnableDownloadUploadMore",
 		"selectGroup1": "My Test",
 		"selectGroup2": "Dev Environmental Testing",
-		"filePath": "D:\\SampleImages"
+		"filePath": "D:\\SampleImages",
+		"filePath1": "D:\\UMImages"
 	},
 	{
 		"Comment": "TestCase 5.DocumentUploadWithoutEditEnableDownloadXbutton",
@@ -1445,7 +1445,6 @@
 		"addtags0": "Year",
 		"tags0": " 2023-24 "
 	},
-	
 	{
 		"Comment": "TestCase 112.DocumentUploadEditAllFieldsSelectAllTagsCancel",
 		"selectGroup1": "My Test",
@@ -1589,6 +1588,16 @@
 		"date2": " 6 ",
 		"addtags0": "Year",
 		"tags0": " 2023-24 "
+	},
+	{
+		"comment": "120.DocumentUploadEditAllFieldsMultipleAddTagsandRemoveAndSave",
+		"selectGroup1": "My Test",
+		"selectGroup2": "Blaine Miller Group",
+		"filePath": "D:\\SampleImages",
+		"count": "2",
+		"addtags0": "Date",
+		"tags0": " 15 ",
+		"addtags1": "Month",
+		"tags1": " 5 "
 	}
-	
 ]

@@ -30,6 +30,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 //import lauditor.PageObjectsModule.DocumentUploadFirmPages;
 import lauditor.pom.pages.*;
+import lauditor.pom.pages.LoginPage;
+
 
 public class BaseClass {
 	public WebDriver driver;
@@ -38,6 +40,7 @@ public class BaseClass {
 	public LoginPage loginPage;
 	public DashBoard dashBoard;
 	public DocumentUploadFirmPages documentUploadFirmpages;
+	public DocumentViewFirmPages documentViewFirmPages;
 
 	public WebDriver initalize() throws IOException {
 
@@ -121,6 +124,7 @@ public class BaseClass {
 		loginPage.loginApplication(prop.getProperty("name"), prop.getProperty("password"));
 		dashBoard = new DashBoard(driver);
 		documentUploadFirmpages = new DocumentUploadFirmPages(driver);
+		documentViewFirmPages= new DocumentViewFirmPages(driver);
 		return loginPage;
 	}
 

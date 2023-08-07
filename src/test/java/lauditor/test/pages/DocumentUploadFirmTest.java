@@ -33,9 +33,15 @@ public class DocumentUploadFirmTest extends BaseClass {
 			documentUploadFirmpages.scrollDown();
 			documentUploadFirmpages.uploadSubmitButton();
 			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+			documentUploadFirmpages.scrollUP();
+			Thread.sleep(3000);
+			
 
 		} finally {
-			// documentUploadFirmpages.leftsideDocument();
+			
+			documentUploadFirmpages.leftsideDocument();
 		}
 
 	}
@@ -45,20 +51,26 @@ public class DocumentUploadFirmTest extends BaseClass {
 			throws InterruptedException, AWTException, IOException {
 
 		try {
-			documentUploadFirmpages.leftsideDocument();
+			driver.navigate().refresh();
 			documentUploadFirmpages.firmTab();
 			documentUploadFirmpages.addPlus();
 			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			Thread.sleep(5000);
 			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
 			documentUploadFirmpages.addMinus();
+			Thread.sleep(2000);
 			documentUploadFirmpages.browseBtn();
 			documentUploadFirmpages.fileUpload(input.get("filePath"));
 			Thread.sleep(5000);
 			documentUploadFirmpages.scrollDown();
 			documentUploadFirmpages.uploadCancel();
+			documentUploadFirmpages.scrollUP();
+			Thread.sleep(3000);
 
 		} finally {
 			// TODO: handle finally clause
+			documentUploadFirmpages.leftsideDocument();
+
 		}
 
 	}
@@ -69,9 +81,11 @@ public class DocumentUploadFirmTest extends BaseClass {
 
 		try {
 			documentUploadFirmpages.leftsideDocument();
+			driver.navigate().refresh();
 			documentUploadFirmpages.firmTab();
 			documentUploadFirmpages.addPlus();
 			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			Thread.sleep(10000);
 			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
 			documentUploadFirmpages.addMinus();
 			documentUploadFirmpages.browseBtn();
@@ -81,13 +95,18 @@ public class DocumentUploadFirmTest extends BaseClass {
 			documentUploadFirmpages.enableDownload();
 			documentUploadFirmpages.uploadSubmitButton();
 			documentUploadFirmpages.viewChanges();
+			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(3000);
+			documentUploadFirmpages.scrollUP();
+			Thread.sleep(3000);
 
 		} finally {
-			// TODO: handle finally clause
+			// TODO: handle finally 
+			//documentUploadFirmpages.leftsideDocument();
 		}
 
 	}
-
+/*
 	@Test(dataProvider = "getData3", priority = 3)
 	public void DocumentUploadWithoutEditEnableDownloadCancel(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -133,19 +152,21 @@ public class DocumentUploadFirmTest extends BaseClass {
 			documentUploadFirmpages.uploadSubmitButton();
 			documentUploadFirmpages.uploadMore();
 			documentUploadFirmpages.scrollUP();
+			Thread.sleep(3000);
 			documentUploadFirmpages.firmTab();
 			documentUploadFirmpages.addPlus();
 			String[] selectGroups1 = { input.get("selectGroup1"), input.get("selectGroup2") };
 			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups1);
 			documentUploadFirmpages.addMinus();
 			documentUploadFirmpages.browseBtn();
-			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			documentUploadFirmpages.fileUpload1(input.get("filePath1"));
 			Thread.sleep(4000);
 			documentUploadFirmpages.scrollDown();
 			documentUploadFirmpages.enableDownload();
 			documentUploadFirmpages.uploadSubmitButton();
 			documentUploadFirmpages.viewChanges();
 			documentUploadFirmpages.scrollDownViewChanges();
+			Thread.sleep(4000);
 		} finally {
 			// documentUploadFirmpages.leftsideDocument();
 
@@ -3851,7 +3872,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData104", priority = 104)
 	public void DocumentUploadEditDescriptionandExpiryDateSelectAllTagsUploadMore(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -3889,7 +3910,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData105", priority = 105)
 	public void DocumentUploadEditDescriptionandExpiryDateEnalbeDownloadSelectAllTags(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -3929,10 +3950,10 @@ public class DocumentUploadFirmTest extends BaseClass {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData106", priority = 106)
-	public void DocumentUploadEditDescriptionandExpiryDateEnalbeDownloadSelectAllTagsCancel(HashMap<String, String> input)
-			throws InterruptedException, AWTException, IOException {
+	public void DocumentUploadEditDescriptionandExpiryDateEnalbeDownloadSelectAllTagsCancel(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
 		try {
 			documentUploadFirmpages.leftsideDocument();
@@ -3961,15 +3982,15 @@ public class DocumentUploadFirmTest extends BaseClass {
 			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
 			Thread.sleep(1000);
 			documentUploadFirmpages.uploadCancel();
-			
+
 		} finally {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData107", priority = 107)
-	public void DocumentUploadEditDescriptionandExpiryDateEnalbeDownloadSelectAllTagsUploadMore(HashMap<String, String> input)
-			throws InterruptedException, AWTException, IOException {
+	public void DocumentUploadEditDescriptionandExpiryDateEnalbeDownloadSelectAllTagsUploadMore(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
 		try {
 			documentUploadFirmpages.leftsideDocument();
@@ -4001,12 +4022,12 @@ public class DocumentUploadFirmTest extends BaseClass {
 			Thread.sleep(2000);
 			documentUploadFirmpages.uploadMore();
 			Thread.sleep(2000);
-			
+
 		} finally {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData108", priority = 108)
 	public void DocumentUploadEditDescriptionandExpiryDateDisableDownloadSelectAllTags(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -4046,10 +4067,10 @@ public class DocumentUploadFirmTest extends BaseClass {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData109", priority = 109)
-	public void DocumentUploadEditDescriptionandExpiryDateDisableDownloadSelectAllTagsCancel(HashMap<String, String> input)
-			throws InterruptedException, AWTException, IOException {
+	public void DocumentUploadEditDescriptionandExpiryDateDisableDownloadSelectAllTagsCancel(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
 		try {
 			documentUploadFirmpages.leftsideDocument();
@@ -4078,15 +4099,15 @@ public class DocumentUploadFirmTest extends BaseClass {
 			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
 			Thread.sleep(1000);
 			documentUploadFirmpages.uploadCancel();
-			
+
 		} finally {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData110", priority = 110)
-	public void DocumentUploadEditDescriptionandExpiryDateDisableDownloadSelectAllTagsUploadMore(HashMap<String, String> input)
-			throws InterruptedException, AWTException, IOException {
+	public void DocumentUploadEditDescriptionandExpiryDateDisableDownloadSelectAllTagsUploadMore(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
 		try {
 			documentUploadFirmpages.leftsideDocument();
@@ -4118,12 +4139,12 @@ public class DocumentUploadFirmTest extends BaseClass {
 			Thread.sleep(2000);
 			documentUploadFirmpages.uploadMore();
 			Thread.sleep(2000);
-			
+
 		} finally {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData111", priority = 111)
 	public void DocumentUploadEditAllFieldsSelectAllTags(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -4158,12 +4179,12 @@ public class DocumentUploadFirmTest extends BaseClass {
 			documentUploadFirmpages.viewChanges();
 			documentUploadFirmpages.scrollDownViewChanges();
 			Thread.sleep(2000);
-			
+
 		} finally {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData112", priority = 112)
 	public void DocumentUploadEditAllFieldsSelectAllTagsCancel(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -4199,12 +4220,12 @@ public class DocumentUploadFirmTest extends BaseClass {
 //			documentUploadFirmpages.viewChanges();
 //			documentUploadFirmpages.scrollDownViewChanges();
 //			Thread.sleep(2000);
-			
+
 		} finally {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData113", priority = 113)
 	public void DocumentUploadEditAllFieldsSelectAllTagsUploadMore(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -4234,17 +4255,17 @@ public class DocumentUploadFirmTest extends BaseClass {
 			documentUploadFirmpages.selectAllCheckbox();
 			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
 			Thread.sleep(1000);
-			//documentUploadFirmpages.uploadCancel();
+			// documentUploadFirmpages.uploadCancel();
 			documentUploadFirmpages.uploadSubmitButton();
 			Thread.sleep(2000);
 			documentUploadFirmpages.uploadMore();
 			Thread.sleep(2000);
-			
+
 		} finally {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData114", priority = 114)
 	public void DocumentUploadEditAllFieldsEnableDownloadSelectAllTags(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -4261,7 +4282,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 			Thread.sleep(5000);
 			documentUploadFirmpages.scrollDown();
 			documentUploadFirmpages.enableDownload();
-			Integer[] intArray1 = new Integer[] { 0, 1,2 };
+			Integer[] intArray1 = new Integer[] { 0, 1, 2 };
 			int count = Integer.parseInt(input.get("count"));
 			String[][] desc = new String[count][3];
 			String[] dn = { "documName", "descp", "date" };
@@ -4275,18 +4296,18 @@ public class DocumentUploadFirmTest extends BaseClass {
 			documentUploadFirmpages.selectAllCheckbox();
 			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
 			Thread.sleep(1000);
-			//documentUploadFirmpages.uploadCancel();
+			// documentUploadFirmpages.uploadCancel();
 			documentUploadFirmpages.uploadSubmitButton();
 			Thread.sleep(2000);
 			documentUploadFirmpages.viewChanges();
 			documentUploadFirmpages.scrollDownViewChanges();
 			Thread.sleep(2000);
-			
+
 		} finally {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData115", priority = 115)
 	public void DocumentUploadEditAllFieldsEnableDownloadSelectAllTagsCancel(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -4303,7 +4324,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 			Thread.sleep(5000);
 			documentUploadFirmpages.scrollDown();
 			documentUploadFirmpages.enableDownload();
-			Integer[] intArray1 = new Integer[] { 0, 1,2 };
+			Integer[] intArray1 = new Integer[] { 0, 1, 2 };
 			int count = Integer.parseInt(input.get("count"));
 			String[][] desc = new String[count][3];
 			String[] dn = { "documName", "descp", "date" };
@@ -4323,12 +4344,12 @@ public class DocumentUploadFirmTest extends BaseClass {
 //			documentUploadFirmpages.viewChanges();
 //			documentUploadFirmpages.scrollDownViewChanges();
 //			Thread.sleep(2000);
-			
+
 		} finally {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData116", priority = 116)
 	public void DocumentUploadEditAllFieldsEnableDownloadSelectAllTagsUploadMore(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -4359,17 +4380,17 @@ public class DocumentUploadFirmTest extends BaseClass {
 			documentUploadFirmpages.selectAllCheckbox();
 			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
 			Thread.sleep(1000);
-			//documentUploadFirmpages.uploadCancel();
+			// documentUploadFirmpages.uploadCancel();
 			documentUploadFirmpages.uploadSubmitButton();
 			Thread.sleep(2000);
 			documentUploadFirmpages.uploadMore();
 			Thread.sleep(2000);
-			
+
 		} finally {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData117", priority = 117)
 	public void DocumentUploadEditAllFieldDisableDownloadSelectAllTags(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -4386,7 +4407,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 			Thread.sleep(5000);
 			documentUploadFirmpages.scrollDown();
 			documentUploadFirmpages.disableDownload();
-			Integer[] intArray1 = new Integer[] { 0, 1,2 };
+			Integer[] intArray1 = new Integer[] { 0, 1, 2 };
 			int count = Integer.parseInt(input.get("count"));
 			String[][] desc = new String[count][3];
 			String[] dn = { "documName", "descp", "date" };
@@ -4400,18 +4421,18 @@ public class DocumentUploadFirmTest extends BaseClass {
 			documentUploadFirmpages.selectAllCheckbox();
 			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
 			Thread.sleep(1000);
-			//documentUploadFirmpages.uploadCancel();
+			// documentUploadFirmpages.uploadCancel();
 			documentUploadFirmpages.uploadSubmitButton();
 			Thread.sleep(2000);
 			documentUploadFirmpages.viewChanges();
 			documentUploadFirmpages.scrollDownViewChanges();
 			Thread.sleep(2000);
-			
+
 		} finally {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData118", priority = 118)
 	public void DocumentUploadEditAllFieldsDisableDownloadSelectAllTagsCancel(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -4428,7 +4449,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 			Thread.sleep(5000);
 			documentUploadFirmpages.scrollDown();
 			documentUploadFirmpages.disableDownload();
-			Integer[] intArray1 = new Integer[] { 0, 1,2 };
+			Integer[] intArray1 = new Integer[] { 0, 1, 2 };
 			int count = Integer.parseInt(input.get("count"));
 			String[][] desc = new String[count][3];
 			String[] dn = { "documName", "descp", "date" };
@@ -4448,12 +4469,12 @@ public class DocumentUploadFirmTest extends BaseClass {
 //			documentUploadFirmpages.viewChanges();
 //			documentUploadFirmpages.scrollDownViewChanges();
 //			Thread.sleep(2000);
-			
+
 		} finally {
 
 		}
 	}
-	
+
 	@Test(dataProvider = "getData119", priority = 119)
 	public void DocumentUploadEditAllFieldsDisableDownloadSelectAllTagsUploadMore(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -4484,16 +4505,52 @@ public class DocumentUploadFirmTest extends BaseClass {
 			documentUploadFirmpages.selectAllCheckbox();
 			documentUploadFirmpages.tagFields(input.get("addtags0"), input.get("tags0"));
 			Thread.sleep(1000);
-			//documentUploadFirmpages.uploadCancel();
+			// documentUploadFirmpages.uploadCancel();
 			documentUploadFirmpages.uploadSubmitButton();
 			Thread.sleep(2000);
 			documentUploadFirmpages.uploadMore();
 			Thread.sleep(2000);
-			
+
 		} finally {
 
 		}
 	}
+	
+	
+	@Test(dataProvider = "getData120", priority = 120)
+	public void DocumentUploadEditAllFieldsMultipleAddTagsandRemoveAndSave(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			documentUploadFirmpages.leftsideDocument();
+			documentUploadFirmpages.firmTab();
+			documentUploadFirmpages.addPlus();
+			String[] selectGroups = { input.get("selectGroup1"), input.get("selectGroup2") };
+			documentUploadFirmpages.DocumentUploadSelectGroups(selectGroups);
+			documentUploadFirmpages.addMinus();
+			documentUploadFirmpages.browseBtn();
+			documentUploadFirmpages.fileUpload(input.get("filePath"));
+			Thread.sleep(5000);
+			documentUploadFirmpages.scrollDown();
+			documentUploadFirmpages.addTagsButton();
+			Integer[] intArray1 = new Integer[] { 0,1 };
+			int count = Integer.parseInt(input.get("count"));
+			String[][] desc = new String[count][2];
+			String[] dn = { "addtags", "tags" };
+			for (int ii = 0; ii < count; ii++) {
+				for (int jj = 0; jj < 2; jj++)
+					desc[ii][jj] = input.get(dn[jj] + ii);
+			}
+			documentUploadFirmpages.tagsAddAndRemove(intArray1, desc);
+			documentUploadFirmpages.uploadSubmitButton();
+			Thread.sleep(2000);
+			documentUploadFirmpages.uploadMore();
+			Thread.sleep(2000);
+
+		} finally {
+
+		}
+	} */
 //******************************* # Data Provider Classes # ***********************************//
 
 	@DataProvider
@@ -5525,7 +5582,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(102) } };
 
 	}
-	
+
 	@DataProvider
 	public Object[][] getData103() throws IOException {
 
@@ -5535,7 +5592,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(103) } };
 
 	}
-	
+
 	@DataProvider
 	public Object[][] getData104() throws IOException {
 
@@ -5545,6 +5602,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(104) } };
 
 	}
+
 	@DataProvider
 	public Object[][] getData105() throws IOException {
 
@@ -5554,7 +5612,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(105) } };
 
 	}
-	
+
 	@DataProvider
 	public Object[][] getData106() throws IOException {
 
@@ -5564,7 +5622,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(106) } };
 
 	}
-	
+
 	@DataProvider
 	public Object[][] getData107() throws IOException {
 
@@ -5574,7 +5632,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(107) } };
 
 	}
-	
+
 	@DataProvider
 	public Object[][] getData108() throws IOException {
 
@@ -5584,7 +5642,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(108) } };
 
 	}
-	
+
 	@DataProvider
 	public Object[][] getData109() throws IOException {
 
@@ -5594,7 +5652,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(109) } };
 
 	}
-	
+
 	@DataProvider
 	public Object[][] getData110() throws IOException {
 
@@ -5604,7 +5662,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(110) } };
 
 	}
-	
+
 	@DataProvider
 	public Object[][] getData111() throws IOException {
 
@@ -5614,6 +5672,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(111) } };
 
 	}
+
 	@DataProvider
 	public Object[][] getData112() throws IOException {
 
@@ -5623,7 +5682,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(112) } };
 
 	}
-	
+
 	@DataProvider
 	public Object[][] getData113() throws IOException {
 
@@ -5633,6 +5692,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(113) } };
 
 	}
+
 	@DataProvider
 	public Object[][] getData114() throws IOException {
 
@@ -5642,7 +5702,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(114) } };
 
 	}
-	
+
 	@DataProvider
 	public Object[][] getData115() throws IOException {
 
@@ -5652,7 +5712,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(115) } };
 
 	}
-	
+
 	@DataProvider
 	public Object[][] getData116() throws IOException {
 
@@ -5662,6 +5722,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(116) } };
 
 	}
+
 	@DataProvider
 	public Object[][] getData117() throws IOException {
 
@@ -5671,6 +5732,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(117) } };
 
 	}
+
 	@DataProvider
 	public Object[][] getData118() throws IOException {
 
@@ -5680,6 +5742,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		return new Object[][] { { data.get(118) } };
 
 	}
+
 	@DataProvider
 	public Object[][] getData119() throws IOException {
 
@@ -5690,4 +5753,14 @@ public class DocumentUploadFirmTest extends BaseClass {
 
 	}
 	
+	@DataProvider
+	public Object[][] getData120() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\DocumentUpload\\DocumentUploadFirm.json");
+
+		return new Object[][] { { data.get(120) } };
+
+	}
+
 }

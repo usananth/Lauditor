@@ -39,12 +39,13 @@ public class DocumentUploadFirmPages extends AbstractClass {
 	@FindBy(xpath = "//a[text()='Firm']")
 	WebElement firmTab;
 
-	public void firmTab() {
+	public void firmTab() throws InterruptedException {
 		visibilityOfAllElements(firmTab);
 		firmTab.click();
+		Thread.sleep(3000);
 	}
 
-	@FindBy(xpath = "//div[@class='input-group index court'] //div[@class='multicheck form-control textbox']")
+	@FindBy(xpath = "//div [@class='input-group index court']//div[@class='multicheck form-control textbox']")
 	List<WebElement> listofGroups;
 
 	@FindBy(xpath = "//button[text()='View Changes']")
@@ -80,11 +81,18 @@ public class DocumentUploadFirmPages extends AbstractClass {
 		getFile(path);
 	}
 
+	public void fileUpload1(String path1) throws InterruptedException {
+		Thread.sleep(5000);
+		getFile(path1);
+	}
+
 	AbstractClass reusable = new AbstractClass(driver);
 
 	// CheckBox
 	@FindBy(xpath = "//div[@class='input-group index court'] //input[@id='flexCheckDefault']")
 	List<WebElement> checkboxSelectElement;
+	
+	
 	// Categories Text Fields
 	@FindBy(xpath = "//input[@id='caseType']")
 	WebElement categoriesText;
@@ -144,7 +152,7 @@ public class DocumentUploadFirmPages extends AbstractClass {
 	WebElement tagInput;
 
 	// Add Button
-	@FindBy(xpath = "//button[@class='btn btn-default btnsave']")
+	@FindBy(xpath = "//button[@class='btn btn-primary']")
 	WebElement addButtonForAddTags;
 
 	public void addTagsButton() {
@@ -175,7 +183,7 @@ public class DocumentUploadFirmPages extends AbstractClass {
 
 	}
 
-	@FindBy(xpath = "//div[@class='icon-list']  //input[@type='checkbox']")
+	@FindBy(xpath = "//div[@class='icon-list'] //div //input[@type='checkbox']")
 	List<WebElement> tagsSelect;
 
 	public void tagsAdd(Integer[] intArray, String[][] des) throws InterruptedException {
@@ -203,7 +211,6 @@ public class DocumentUploadFirmPages extends AbstractClass {
 			Thread.sleep(2000);
 			int eb = intArray[jj];
 			tagsSelect.get(eb).click();
-			pageDown();
 			addButtonAddTags();
 			pageDown();
 			removeTags();
@@ -249,13 +256,17 @@ public class DocumentUploadFirmPages extends AbstractClass {
 		}
 	}
 
-	@FindBy(xpath = "//i[@class='fa fa-plus form-check-inpu calimg calitem input-group-append checkboxitem']")
+	@FindBy(xpath = "//i[@aria-hidden='true']")
 	WebElement addPlus;
 
 	public void addPlus() throws InterruptedException {
 		Thread.sleep(3000);
 		visibilityOfAllElements(addPlus);
-		addPlus.click();
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+	       
+        // Call the JavascriptExecutor methods
+        js.executeScript("arguments[0].click();", addPlus);
+		//addPlus.click();
 
 	}
 
