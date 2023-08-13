@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="lauditor.test.pages.DocumentViewFirmTest">
+      <class name="lauditor.test.pages.CalendarGeneralEventTest">
         <methods>
-          <include name="DocumentViewFirmAction_View_MergedAction_DeletePDF_PopupXClose"/>
           <include name="launchApplication"/>
           <include name="down"/>
+          <include name="CGMEventCreation_Task_DraftAgreements_AllDay_Yearly_EventView" invocation-numbers="0"/>
         </methods>
-      </class> <!-- lauditor.test.pages.DocumentViewFirmTest -->
+      </class> <!-- lauditor.test.pages.CalendarGeneralEventTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

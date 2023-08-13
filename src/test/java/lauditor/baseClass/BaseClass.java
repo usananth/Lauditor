@@ -30,7 +30,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 //import lauditor.PageObjectsModule.DocumentUploadFirmPages;
 import lauditor.pom.pages.*;
-import lauditor.pom.pages.LoginPage;
 
 
 public class BaseClass {
@@ -41,6 +40,7 @@ public class BaseClass {
 	public DashBoard dashBoard;
 	public DocumentUploadFirmPages documentUploadFirmpages;
 	public DocumentViewFirmPages documentViewFirmPages;
+	public CalendarGeneralEventPage calendarGeneralEventPage;
 
 	public WebDriver initalize() throws IOException {
 
@@ -125,6 +125,7 @@ public class BaseClass {
 		dashBoard = new DashBoard(driver);
 		documentUploadFirmpages = new DocumentUploadFirmPages(driver);
 		documentViewFirmPages= new DocumentViewFirmPages(driver);
+		calendarGeneralEventPage= new CalendarGeneralEventPage(driver);
 		return loginPage;
 	}
 
