@@ -41,6 +41,7 @@ public class BaseClass {
 	public DocumentUploadFirmPages documentUploadFirmpages;
 	public DocumentViewFirmPages documentViewFirmPages;
 	public CalendarGeneralEventPage calendarGeneralEventPage;
+	public CalendarViewMeetingsPage calendarViewMeetingsPage;
 
 	public WebDriver initalize() throws IOException {
 
@@ -126,6 +127,7 @@ public class BaseClass {
 		documentUploadFirmpages = new DocumentUploadFirmPages(driver);
 		documentViewFirmPages= new DocumentViewFirmPages(driver);
 		calendarGeneralEventPage= new CalendarGeneralEventPage(driver);
+		calendarViewMeetingsPage= new CalendarViewMeetingsPage(driver);
 		return loginPage;
 	}
 

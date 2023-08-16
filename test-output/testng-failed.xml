@@ -6,8 +6,8 @@
       <class name="lauditor.test.pages.CalendarGeneralEventTest">
         <methods>
           <include name="launchApplication"/>
+          <include name="CGMEventCreation_Task_Consultation_Repet_Weekly" invocation-numbers="0"/>
           <include name="down"/>
-          <include name="CGMEventCreation_Task_DraftAgreements_AllDay_Yearly_EventView" invocation-numbers="0"/>
         </methods>
       </class> <!-- lauditor.test.pages.CalendarGeneralEventTest -->
     </classes>

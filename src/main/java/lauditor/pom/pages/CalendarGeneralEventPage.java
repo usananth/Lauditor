@@ -1,9 +1,8 @@
 package lauditor.pom.pages;
 
-import java.util.Arrays;
-import java.util.List;
+import static org.testng.Assert.assertEquals;
 
-import javax.swing.plaf.synth.SynthRadioButtonMenuItemUI;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -155,47 +154,124 @@ public class CalendarGeneralEventPage extends AbstractClass {
 		Thread.sleep(2000);
 	}
 
-	// View Events Calendar Event title
-	// @FindBy(xpath = "//span [@class='cal-event-)
 	@FindBy(xpath = "//div //div [@class='cal-event']")
-	List<WebElement> CEventTitles;
+	List<WebElement> EventNames;
 
-	// WebElement eventDetils = driver.findElement(By.xpath("//div //div
-	// [@class='cal-event']"));
-	// List<WebElement> CEventTitles =
-	// driver.findElements(By.xpath("//div[@class='cal-event']"));
-	String EName = "11.30 AM Nginx-General - Draft agreements";
+	public void CalendarEventsCollection(String Eventname) throws InterruptedException {
 
-	// 12:30 PM AKS-Legal - Case filling
-	public void CollectionofEventTitles(String Eventname) throws InterruptedException {
-
-		// while (!CollectionofEventTitles.getText().contains(EventName)) {
-		for (int i = 0; i < CEventTitles.size(); i++) {
-
-			String Eventsname = CEventTitles.get(i).getText();
-			Thread.sleep(3000);
-			if (Eventname.equals(Eventsname)) {
-				Thread.sleep(3000);
-				WebElement MeetingClick = CEventTitles.get(i);
+		Thread.sleep(2000);
+		for (int i = 0; i < EventNames.size(); i++) {
+			String EventCollections = EventNames.get(i).getText();
+			Thread.sleep(1000);
+			// System.out.println("All Group Name Text "+allCalendarTextName);
+			if (Eventname.equals(EventCollections)) {
+				Thread.sleep(1000);
+				WebElement EventClick = EventNames.get(i);
 				JavascriptExecutor executor = (JavascriptExecutor) driver;
-				Thread.sleep(3000);
-				executor.executeScript("arguments[0].click();", MeetingClick);
-
+				executor.executeScript("arguments[0].click();", EventClick);
 			}
+
 		}
+
 	}
 
-//		while (!EventMonths.getText().contains(EMonth)) {
-//			driver.findElement(By.xpath("//div[@class='bs-datepicker-head']//button[@class='next']")).click();
-//		}
+	@FindBy(xpath = "//*[text()='Week']")
+	WebElement EventViewWeek;
+
+	public void WeekView() throws InterruptedException {
+		Thread.sleep(2000);
+		visibilityOfAllElements(EventViewWeek);
+		EventViewWeek.click();
+	}
+
+	public void CalendarEventsCollection_Week(String Eventname) throws InterruptedException {
+		WeekView();
+		Thread.sleep(3000);
+		for (int i = 0; i < EventNames.size(); i++) {
+			String EventCollections = EventNames.get(i).getText();
+			Thread.sleep(1000);
+			// System.out.println("All Group Name Text "+allCalendarTextName);
+			if (Eventname.equals(EventCollections)) {
+				Thread.sleep(1000);
+				WebElement EventClick = EventNames.get(i);
+				JavascriptExecutor executor = (JavascriptExecutor) driver;
+				executor.executeScript("arguments[0].click();", EventClick);
+			}
+
+		}
+
+	}
+
+	@FindBy(xpath = "//img[@class='lefticon']")
+	WebElement LeftArrowClick;
+
+	@FindBy(xpath = "//img[@class='righticon']")
+	WebElement RightArrowClick;
+
+	public void RightArrow_LeftArrow_Date(String EDate) throws InterruptedException {
+
+		Thread.sleep(3000);
+		int EventDates = Integer.parseInt(EDate);
+		String DateLabel = driver.findElement(By.xpath("//label[@class='tdate']")).getText();
+		String DLable1 = DateLabel.split(",")[1];
+		String DLabel2 = DLable1.trim();
+		String EventDate = DLabel2.split(" ")[1];
+		int TodayDate = Integer.parseInt(EventDate);
+//		while (!(TodayDate == EventDates)) {
+//			TodayDate++;
+//			RightArrowClick.click();
+
+		int DateDiff = EventDates - TodayDate;
+		boolean flag=true;
+		if (DateDiff < 0) {
+			flag = false;
+			DateDiff = -1 * DateDiff;
+		}
+
+		for (int i = 0; i < DateDiff; i++) {
+			if (flag == false) {
+				Thread.sleep(1000);
+				LeftArrowClick.click();
+			} else {
+				Thread.sleep(1000);
+				RightArrowClick.click();
+			}
+		}
+
+	}
+
+	public void RightArrow_LeftArrow_Week(String EDate) throws InterruptedException {
+
+		Thread.sleep(2000);
+		int EventDates = Integer.parseInt(EDate);
+		String DateLabel = driver.findElement(By.xpath("//label[@class='tdate']")).getText();
+		String DLable1 = DateLabel.split(",")[1];
+		String DLabel2 = DLable1.trim();
+		String EventDate = DLabel2.split(" ")[1];
+		int TodayDate = Integer.parseInt(EventDate);
+		int DateDiff = EventDates - TodayDate;
+		boolean flag = true;
+		if (DateDiff < 0) {
+			flag = false;
+			DateDiff = -1 * DateDiff;
+		}
+
+		for (int i = 0; i < DateDiff; i++) {
+			if (flag == false) {
+				Thread.sleep(1000);
+				LeftArrowClick.click();
+			} else {
+				Thread.sleep(1000);
+				RightArrowClick.click();
+			}
+		}
+
+	}
 
 	public void ESaveViewChanges() throws InterruptedException {
+
 		visibilityOfAllElements(ESViewChanges);
 		ESViewChanges.click();
-		Thread.sleep(2000);
-		ScrollToUp();
-		Thread.sleep(2000);
-
 	}
 
 	public void EventStratTime(String EStartTime) throws InterruptedException {
@@ -274,6 +350,16 @@ public class CalendarGeneralEventPage extends AbstractClass {
 		EventSaveBtn.click();
 	}
 
+	// Meeting name assert
+	@FindBy(xpath = "//div //p[@class='casestudy1']")
+	WebElement MatterNameText;
+
+	public void AssertMeetingName(String actual) throws InterruptedException {
+		Thread.sleep(3000);
+		String ExpMatterName = MatterNameText.getText();
+		assertEquals(actual, ExpMatterName);
+	}
+
 	public void pageDown() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,250)");
@@ -286,7 +372,7 @@ public class CalendarGeneralEventPage extends AbstractClass {
 
 	public void ScrollToUp() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,-400)");
+		js.executeScript("window.scrollBy(0,-250)");
 	}
 
 }
