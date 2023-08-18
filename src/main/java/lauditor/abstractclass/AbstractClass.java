@@ -3,7 +3,6 @@ package lauditor.abstractclass;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AbstractClass {
@@ -30,7 +30,7 @@ public class AbstractClass {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
 	}
-	
+
 	public void scrollUp() throws InterruptedException {
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -104,6 +104,13 @@ public class AbstractClass {
 			e.printStackTrace();
 		}
 
+	}
+
+	// Select Class
+	public void SelectingNames(WebElement nameTasks, String name) throws InterruptedException {
+		Thread.sleep(3000);
+		Select selectList = new Select(nameTasks);
+		selectList.selectByVisibleText(name);
 	}
 
 }

@@ -1,15 +1,15 @@
 [
 	{
 		"Comment": "TestCase 0.Calendar_GMatter_Task_Consultation & Repetition -> Daily ",
-		"MatterName": "Test Matter 01",
+		"MatterName": "GST Return",
 		"SubjectTaskName": "Consultation",
-		"Eventdate": "20",
+		"Eventdate": "17",
 		"Eventmonth": "August",
 		"Eventyear": "2023",
 		"EStartTime": "14:00",
 		"EEndTime": "14:30",
 		"Repetition": "Daily",
-		"EventName": "2:00 PM Test Matter 01 - Consultation",
+		"EventName": "2:45 PM GST Return - Consultation",
 		"AssertCheck": "Test Matter 01 - Consultation"
 	},
 	{
@@ -513,5 +513,25 @@
 		"EStartTime": "10:00",
 		"Repetition": "Weekly",
 		"EventName": "10:00 AM Test Matter 01 - Consultation"
+	},
+	{
+		"Comment": "TestCase 101.Calendar Week View",
+		"MatterName": "Test Matter 01",
+		"SubjectTaskName": "Consultation",
+		"Eventdate": "18",
+		"Eventmonth": "August",
+		"Eventyear": "2023",
+		"EStartTime": "19:00",
+		"Repetition": "Weekly",
+		"Eventweek": "Aug 13 - Aug 19",
+		"EventName": "7:00 PM Test Matter 01 - Consultation"
+	},
+	{
+		"Comment": "TestCase 52.Calendar Week View_CalendarClick",
+		"MatterName": "Test Matter 01",
+		"SubjectTaskName": "Consultation",
+		"Eventdate": "18",
+		"Eventmonth": "August",
+		"Eventyear": "2023"
 	}
 ]
