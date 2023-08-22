@@ -6,8 +6,8 @@
       <class name="lauditor.test.pages.CreateCalendarGMEventTest">
         <methods>
           <include name="launchApplication"/>
-          <include name="Calendar_GM_MandatoryFields_AddDocument_AddIndividuals" invocation-numbers="0"/>
           <include name="down"/>
+          <include name="Calendar_GMManFields_MeetingLink_DialupNumber_Location_AddIndividual" invocation-numbers="0"/>
         </methods>
       </class> <!-- lauditor.test.pages.CreateCalendarGMEventTest -->
     </classes>
