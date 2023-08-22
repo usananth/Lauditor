@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="lauditor.test.pages.CalendarGeneralCreateEventTest">
+      <class name="lauditor.test.pages.CreateCalendarGMEventTest">
         <methods>
-          <include name="Calendar_GM_MandatoryFields_AddIndividual" invocation-numbers="0"/>
           <include name="launchApplication"/>
+          <include name="Calendar_GM_MandatoryFields_AddDocument_AddIndividuals" invocation-numbers="0"/>
           <include name="down"/>
         </methods>
-      </class> <!-- lauditor.test.pages.CalendarGeneralCreateEventTest -->
+      </class> <!-- lauditor.test.pages.CreateCalendarGMEventTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

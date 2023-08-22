@@ -17,12 +17,12 @@ import org.openqa.selenium.support.ui.Select;
 import lauditor.abstractclass.AbstractClass;
 import net.bytebuddy.dynamic.VisibilityBridgeStrategy;
 
-public class CalendarGeneralEventPage extends AbstractClass {
+public class CreateCalendarGMEventPage extends AbstractClass {
 	private WebElement webElement;
 
 	WebDriver driver;
 
-	public CalendarGeneralEventPage(WebDriver driver) {
+	public CreateCalendarGMEventPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -420,7 +420,7 @@ public class CalendarGeneralEventPage extends AbstractClass {
 
 //	@FindBy(xpath = "//div [@class='mainmargin scroll-container']");
 //	WebElement InnerScroll;
-	public void InnerScroll() throws InterruptedException {
+	public void InnerScrollAllDay() throws InterruptedException {
 		Thread.sleep(3000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebElement InnerScroll = driver.findElement(By.xpath("//div //div[contains(text(),'all-day')]"));
@@ -484,9 +484,10 @@ public class CalendarGeneralEventPage extends AbstractClass {
 		assertEquals(ActualNumber, ExpDialNumber);
 	}
 
-	public void EventLocation(String EventLocation) {
+	public void EventLocation(String EventLoc) throws InterruptedException {
+		Thread.sleep(2000);
 		visibilityOfAllElements(Location);
-		Location.sendKeys(EventLocation);
+		Location.sendKeys(EventLoc);
 
 	}
 
@@ -521,35 +522,6 @@ public class CalendarGeneralEventPage extends AbstractClass {
 	@FindBy(xpath = "(//div[@class='col-xs-12 col-sm-6'])[1] //label[@class='usernamelist']")
 	List<WebElement> TeamMemberNameSelect;
 
-	public void AssertTeamMember(String names) throws InterruptedException {
-		Thread.sleep(2000);
-		boolean nameTeamMatched = TeamMemberNameSelect.stream()
-				.anyMatch(selectedAllName -> selectedAllName.getText().equalsIgnoreCase(names));
-		assertTrue(nameTeamMatched);
-	}
-
-	// Entity and Individuals
-	@FindBy(xpath = "(//div[@class='col-xs-12 col-sm-6'])[2] //label[2]")
-	List<WebElement> EntityandIndividualSelected;
-
-	public void AssertEntityandIndividual(String names) throws InterruptedException {
-		Thread.sleep(2000);
-		boolean nameMatched = EntityandIndividualSelected.stream()
-				.anyMatch(selectedAllName -> selectedAllName.getText().equalsIgnoreCase(names));
-		assertTrue(nameMatched);
-	}
-
-	// Document Assert
-	@FindBy(xpath = "//div[@class='documentbox']//p")
-	List<WebElement> DocumentText;
-
-	public void AssertDocuments(String DocName) throws InterruptedException {
-		Thread.sleep(2000);
-		boolean DocumentNameMatched = DocumentText.stream()
-				.anyMatch(selectedAllName -> selectedAllName.getText().equalsIgnoreCase(DocName));
-		assertTrue(DocumentNameMatched);
-	}
-
 	// Add Entity Firm
 	public void AddEntityFirmSelect(String EName) throws InterruptedException {
 		visibilityOfAllElements(AddEntity);
@@ -582,6 +554,45 @@ public class CalendarGeneralEventPage extends AbstractClass {
 		SearchIndividualsInput.sendKeys(text);
 		visibilityOfAllElements(AddIndiButton);
 		AddIndiButton.click();
+	}
+
+	// Add NotifyMe
+	@FindBy(xpath = "//button[@type='button'][1]")
+	WebElement AddNotityMe;
+
+	public void AddNotification() throws InterruptedException {
+		Thread.sleep(2000);
+		visibilityOfAllElements(AddNotityMe);
+		AddNotityMe.click();
+	}
+
+	public void AssertTeamMember(String names) throws InterruptedException {
+		Thread.sleep(2000);
+		boolean nameTeamMatched = TeamMemberNameSelect.stream()
+				.anyMatch(selectedAllName -> selectedAllName.getText().equalsIgnoreCase(names));
+		assertTrue(nameTeamMatched);
+	}
+
+	// Entity and Individuals
+	@FindBy(xpath = "(//div[@class='col-xs-12 col-sm-6'])[2] //label[2]")
+	List<WebElement> EntityandIndividualSelected;
+
+	public void AssertEntityandIndividual(String names) throws InterruptedException {
+		Thread.sleep(2000);
+		boolean nameMatched = EntityandIndividualSelected.stream()
+				.anyMatch(selectedAllName -> selectedAllName.getText().equalsIgnoreCase(names));
+		assertTrue(nameMatched);
+	}
+
+	// Document Assert
+	@FindBy(xpath = "//div[@class='documentbox']//p")
+	List<WebElement> DocumentText;
+
+	public void AssertDocuments(String DocName) throws InterruptedException {
+		Thread.sleep(2000);
+		boolean DocumentNameMatched = DocumentText.stream()
+				.anyMatch(selectedAllName -> selectedAllName.getText().equalsIgnoreCase(DocName));
+		assertTrue(DocumentNameMatched);
 	}
 
 	public void ScrollDown() {
