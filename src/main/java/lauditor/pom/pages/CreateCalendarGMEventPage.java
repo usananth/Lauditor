@@ -309,10 +309,10 @@ public class CreateCalendarGMEventPage extends AbstractClass {
 
 		for (int i = 0; i < DateDiff; i++) {
 			if (flag == false) {
-				Thread.sleep(1000);
+				//Thread.sleep(1000);
 				LeftArrowClick.click();
 			} else {
-				Thread.sleep(1000);
+				//Thread.sleep(1000);
 				RightArrowClick.click();
 			}
 		}

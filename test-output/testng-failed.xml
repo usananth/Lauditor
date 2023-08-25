@@ -5,9 +5,9 @@
     <classes>
       <class name="lauditor.test.pages.CreateCalendarGMEventTest">
         <methods>
+          <include name="Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_AddEntityClient" invocation-numbers="0"/>
           <include name="launchApplication"/>
           <include name="down"/>
-          <include name="Calendar_GMManFields_MeetingLink_DialupNumber_Location_AddIndividual" invocation-numbers="0"/>
         </methods>
       </class> <!-- lauditor.test.pages.CreateCalendarGMEventTest -->
     </classes>
