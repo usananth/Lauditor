@@ -1283,7 +1283,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 
 	}
 
-	@Test(dataProvider = "getData54", priority = 54)
+	@Test(dataProvider = "getData101", priority = 101)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_AddTeamMember(
 			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
@@ -1295,8 +1295,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
 			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
 					input.get("Eventyear"));
-			createCalendarGMEvents.EventStratTime(input.get("EStartTime"));
-			createCalendarGMEvents.EventEndTime(input.get("EEndTime"));
+			createCalendarGMEvents.AllDayCheckBox();
 			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
 			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
 			createCalendarGMEvents.EventLocation(input.get("Elocation"));
@@ -1306,6 +1305,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.EventSaveBtn();
 			createCalendarGMEvents.ESaveViewChanges();
 			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
 			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
 			Thread.sleep(2000);
 			createCalendarGMEvents.ScrollToUp();
@@ -1322,7 +1322,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 
 	}
 
-	@Test(dataProvider = "getData55", priority = 55)
+	@Test(dataProvider = "getData102", priority = 102)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_AddEntityClient(
 			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
@@ -1334,8 +1334,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
 			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
 					input.get("Eventyear"));
-			createCalendarGMEvents.EventStratTime(input.get("EStartTime"));
-			createCalendarGMEvents.EventEndTime(input.get("EEndTime"));
+			createCalendarGMEvents.AllDayCheckBox();
 			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
 			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
 			createCalendarGMEvents.EventLocation(input.get("Elocation"));
@@ -1346,6 +1345,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.EventSaveBtn();
 			createCalendarGMEvents.ESaveViewChanges();
 			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
 			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
 			Thread.sleep(2000);
 			createCalendarGMEvents.ScrollToUp();
@@ -1363,7 +1363,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 
 	}
 
-	@Test(dataProvider = "getData56", priority = 56)
+	@Test(dataProvider = "getData103", priority = 103)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_AddDocuments(
 			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
@@ -1375,8 +1375,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
 			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
 					input.get("Eventyear"));
-			createCalendarGMEvents.EventStratTime(input.get("EStartTime"));
-			createCalendarGMEvents.EventEndTime(input.get("EEndTime"));
+			createCalendarGMEvents.AllDayCheckBox();
 			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
 			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
 			createCalendarGMEvents.EventLocation(input.get("Elocation"));
@@ -1386,6 +1385,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.EventSaveBtn();
 			createCalendarGMEvents.ESaveViewChanges();
 			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
 			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
 			Thread.sleep(2000);
 			createCalendarGMEvents.ScrollToUp();
@@ -1403,7 +1403,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 
 	}
 
-	@Test(dataProvider = "getData57", priority = 57)
+	@Test(dataProvider = "getData504", priority = 104)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_AddIndividual(
 			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
@@ -1415,8 +1415,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
 			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
 					input.get("Eventyear"));
-			createCalendarGMEvents.EventStratTime(input.get("EStartTime"));
-			createCalendarGMEvents.EventEndTime(input.get("EEndTime"));
+			createCalendarGMEvents.AllDayCheckBox();
 			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
 			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
 			createCalendarGMEvents.EventLocation(input.get("Elocation"));
@@ -1426,6 +1425,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.EventSaveBtn();
 			createCalendarGMEvents.ESaveViewChanges();
 			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
 			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
 			Thread.sleep(2000);
 			createCalendarGMEvents.ScrollToUp();
@@ -1443,7 +1443,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 
 	}
 
-	@Test(dataProvider = "getData58", priority = 58)
+	@Test(dataProvider = "getData105", priority = 105)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddTeamMember(
 			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
@@ -1455,8 +1455,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
 			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
 					input.get("Eventyear"));
-			createCalendarGMEvents.EventStratTime(input.get("EStartTime"));
-			createCalendarGMEvents.EventEndTime(input.get("EEndTime"));
+			createCalendarGMEvents.AllDayCheckBox();
 			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
 			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
 			createCalendarGMEvents.EventLocation(input.get("Elocation"));
@@ -1468,6 +1467,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			Thread.sleep(2000);
 			createCalendarGMEvents.ESaveViewChanges();
 			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
 			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
 			Thread.sleep(2000);
 			createCalendarGMEvents.ScrollToUp();
@@ -1485,7 +1485,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 
 	}
 
-	@Test(dataProvider = "getData59", priority = 59)
+	@Test(dataProvider = "getData106", priority = 106)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddEntityClient(
 			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
@@ -1497,8 +1497,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
 			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
 					input.get("Eventyear"));
-			createCalendarGMEvents.EventStratTime(input.get("EStartTime"));
-			createCalendarGMEvents.EventEndTime(input.get("EEndTime"));
+			createCalendarGMEvents.AllDayCheckBox();
 			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
 			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
 			createCalendarGMEvents.EventLocation(input.get("Elocation"));
@@ -1511,6 +1510,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			Thread.sleep(2000);
 			createCalendarGMEvents.ESaveViewChanges();
 			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
 			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
 			Thread.sleep(2000);
 			createCalendarGMEvents.ScrollToUp();
@@ -1529,7 +1529,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 
 	}
 
-	@Test(dataProvider = "getData60", priority = 60)
+	@Test(dataProvider = "getData107", priority = 107)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddDocuments(
 			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
@@ -1541,8 +1541,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
 			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
 					input.get("Eventyear"));
-			createCalendarGMEvents.EventStratTime(input.get("EStartTime"));
-			createCalendarGMEvents.EventEndTime(input.get("EEndTime"));
+			createCalendarGMEvents.AllDayCheckBox();
 			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
 			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
 			createCalendarGMEvents.EventLocation(input.get("Elocation"));
@@ -1554,6 +1553,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			Thread.sleep(2000);
 			createCalendarGMEvents.ESaveViewChanges();
 			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
 			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
 			Thread.sleep(2000);
 			createCalendarGMEvents.ScrollToUp();
@@ -1572,7 +1572,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 
 	}
 
-	@Test(dataProvider = "getData61", priority = 61)
+	@Test(dataProvider = "getData108", priority = 108)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddIndividual(
 			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
@@ -1584,8 +1584,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
 			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
 					input.get("Eventyear"));
-			createCalendarGMEvents.EventStratTime(input.get("EStartTime"));
-			createCalendarGMEvents.EventEndTime(input.get("EEndTime"));
+			createCalendarGMEvents.AllDayCheckBox();
 			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
 			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
 			createCalendarGMEvents.EventLocation(input.get("Elocation"));
@@ -1597,6 +1596,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			Thread.sleep(2000);
 			createCalendarGMEvents.ESaveViewChanges();
 			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
 			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
 			Thread.sleep(2000);
 			createCalendarGMEvents.ScrollToUp();
@@ -1615,7 +1615,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 
 	}
 
-	@Test(dataProvider = "getData62", priority = 62)
+	@Test(dataProvider = "getData109", priority = 109)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddTeamMember_AddEntityClient(
 			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
@@ -1627,8 +1627,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
 			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
 					input.get("Eventyear"));
-			createCalendarGMEvents.EventStratTime(input.get("EStartTime"));
-			createCalendarGMEvents.EventEndTime(input.get("EEndTime"));
+			createCalendarGMEvents.AllDayCheckBox();
 			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
 			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
 			createCalendarGMEvents.EventLocation(input.get("Elocation"));
@@ -1642,6 +1641,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			Thread.sleep(2000);
 			createCalendarGMEvents.ESaveViewChanges();
 			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
 			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
 			Thread.sleep(2000);
 			createCalendarGMEvents.ScrollToUp();
@@ -1661,7 +1661,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 
 	}
 
-	@Test(dataProvider = "getData63", priority = 63)
+	@Test(dataProvider = "getData110", priority = 110)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddTeamMember_AddDocuments(
 			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
@@ -1673,8 +1673,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
 			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
 					input.get("Eventyear"));
-			createCalendarGMEvents.EventStratTime(input.get("EStartTime"));
-			createCalendarGMEvents.EventEndTime(input.get("EEndTime"));
+			createCalendarGMEvents.AllDayCheckBox();
 			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
 			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
 			createCalendarGMEvents.EventLocation(input.get("Elocation"));
@@ -1687,6 +1686,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			Thread.sleep(2000);
 			createCalendarGMEvents.ESaveViewChanges();
 			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
 			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
 			Thread.sleep(2000);
 			createCalendarGMEvents.ScrollToUp();
@@ -1706,7 +1706,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 
 	}
 
-	@Test(dataProvider = "getData64", priority = 64)
+	@Test(dataProvider = "getData111", priority = 111)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddTeamMember_AddIndividual(
 			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
@@ -1718,8 +1718,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
 			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
 					input.get("Eventyear"));
-			createCalendarGMEvents.EventStratTime(input.get("EStartTime"));
-			createCalendarGMEvents.EventEndTime(input.get("EEndTime"));
+			createCalendarGMEvents.AllDayCheckBox();
 			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
 			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
 			createCalendarGMEvents.EventLocation(input.get("Elocation"));
@@ -1732,6 +1731,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			Thread.sleep(2000);
 			createCalendarGMEvents.ESaveViewChanges();
 			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
 			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
 			Thread.sleep(2000);
 			createCalendarGMEvents.ScrollToUp();
@@ -1751,7 +1751,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 
 	}
 
-	@Test(dataProvider = "getData65", priority = 65)
+	@Test(dataProvider = "getData112", priority = 112)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddTeamMember_AddIndividual_AddEntityClient_AddDocument(
 			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
 
@@ -1763,8 +1763,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
 			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
 					input.get("Eventyear"));
-			createCalendarGMEvents.EventStratTime(input.get("EStartTime"));
-			createCalendarGMEvents.EventEndTime(input.get("EEndTime"));
+			createCalendarGMEvents.AllDayCheckBox();
 			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
 			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
 			createCalendarGMEvents.EventLocation(input.get("Elocation"));
@@ -1780,6 +1779,7 @@ public class CreateCalendarGMEventTest2 extends BaseClass {
 			Thread.sleep(2000);
 			createCalendarGMEvents.ESaveViewChanges();
 			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
 			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
 			Thread.sleep(2000);
 			createCalendarGMEvents.ScrollToUp();

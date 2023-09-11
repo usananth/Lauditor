@@ -10,12 +10,6 @@ import java.util.List;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -23,14 +17,20 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 //import lauditor.PageObjectsModule.DocumentUploadFirmPages;
-import lauditor.pom.pages.*;
-
+import lauditor.pom.pages.CreateCalendarGMEventPage;
+import lauditor.pom.pages.CreateMeetingsPage;
+import lauditor.pom.pages.DashBoard;
+import lauditor.pom.pages.DocumentUploadFirmPages;
+import lauditor.pom.pages.DocumentViewFirmPages;
+import lauditor.pom.pages.LoginPage;
+import lauditor.pom.pages.SingleTestCaseCalendarPage;
+import lauditor.pom.pages.ViewMeetingsPage;
 
 public class BaseClass {
 	public WebDriver driver;
@@ -41,7 +41,9 @@ public class BaseClass {
 	public DocumentUploadFirmPages documentUploadFirmpages;
 	public DocumentViewFirmPages documentViewFirmPages;
 	public CreateCalendarGMEventPage createCalendarGMEvents;
-	public CalendarViewMeetingsPage calendarViewMeetingsPage;
+	public CreateMeetingsPage createMeeting;
+	public SingleTestCaseCalendarPage SingleTest;
+	public ViewMeetingsPage viewMeeting;
 
 	public WebDriver initalize() throws IOException {
 
@@ -64,12 +66,11 @@ public class BaseClass {
 			driver = new EdgeDriver();
 		}
 		driver.manage().window().maximize();
-		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 
 		return driver;
 	}
-
 
 	public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException
 
@@ -125,9 +126,13 @@ public class BaseClass {
 		loginPage.loginApplication(prop.getProperty("name"), prop.getProperty("password"));
 		dashBoard = new DashBoard(driver);
 		documentUploadFirmpages = new DocumentUploadFirmPages(driver);
-		documentViewFirmPages= new DocumentViewFirmPages(driver);
-		createCalendarGMEvents= new CreateCalendarGMEventPage(driver);
-		calendarViewMeetingsPage= new CalendarViewMeetingsPage(driver);
+		documentViewFirmPages = new DocumentViewFirmPages(driver);
+		createCalendarGMEvents = new CreateCalendarGMEventPage(driver);
+		createMeeting = new CreateMeetingsPage(driver);
+		viewMeeting = new ViewMeetingsPage(driver);
+		SingleTest= new SingleTestCaseCalendarPage(driver);
+//		calendarViewMeetingsPage= new CalendarViewMeetingsPage(driver);
+//		CreateMeetigns=new CalendarViewMeetingsPage(driver);
 		return loginPage;
 	}
 

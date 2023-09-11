@@ -31,7 +31,7 @@ public class AbstractClass {
 		js.executeScript("window.scrollBy(0,500)");
 	}
 
-	public void scrollUp() throws InterruptedException {
+	public void ScrollUp() throws InterruptedException {
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,46)");

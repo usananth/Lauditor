@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.util.Calendar;
+import java.util.Iterator;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -212,15 +213,19 @@ public class CreateCalendarGMEventPage extends AbstractClass {
 	@FindBy(xpath = "//div //div [@class='cal-event']")
 	List<WebElement> EventNames;
 
+	@FindBy(xpath = "//span //label[@class='lbltime']")
+	List<WebElement> EventNamesMonth;
+
 	public void CalendarEventsCollection(String Eventname) throws InterruptedException {
 
 		Thread.sleep(3000);
 		for (int i = 0; i < EventNames.size(); i++) {
 			String EventCollections = EventNames.get(i).getText();
 			Thread.sleep(1000);
-			// System.out.println("All Group Name Text "+allCalendarTextName);
+			System.out.println("All Group Name Text " + EventCollections);
 			if (Eventname.equals(EventCollections)) {
 				Thread.sleep(1000);
+
 				WebElement EventClick = EventNames.get(i);
 				JavascriptExecutor executor = (JavascriptExecutor) driver;
 				executor.executeScript("arguments[0].click();", EventClick);
@@ -230,13 +235,51 @@ public class CreateCalendarGMEventPage extends AbstractClass {
 
 	}
 
+	public void CalendarEventsSelectionMonths(String Eventname) throws InterruptedException {
+
+		Thread.sleep(3000);
+		for (int i = 0; i < EventNamesMonth.size(); i++) {
+			String EventCollections = EventNamesMonth.get(i).getText();
+			Thread.sleep(1000);
+			if (Eventname.contains(EventCollections)) {
+				Thread.sleep(1000);
+				WebElement EventClick1 = EventNamesMonth.get(i);
+				JavascriptExecutor executor = (JavascriptExecutor) driver;
+				executor.executeScript("arguments[0].click();", EventClick1);
+
+			}
+		}
+	}
+
+	@FindBy(xpath = "//*[text()='View']")
+	WebElement EventViewTab;
+
+	public void EventViewTap() {
+		visibilityOfAllElements(EventViewTab);
+		EventViewTab.click();
+
+	}
+
 	@FindBy(xpath = "//*[text()='Week']")
-	WebElement EventViewWeek;
+	WebElement WeekView;
 
 	public void WeekView() throws InterruptedException {
 		Thread.sleep(2000);
-		visibilityOfAllElements(EventViewWeek);
-		EventViewWeek.click();
+		visibilityOfAllElements(WeekView);
+		WeekView.click();
+		RightArrowClick.click();
+		Thread.sleep(2000);
+	}
+
+	@FindBy(xpath = "//*[text()='Month']")
+	WebElement MonthView;
+
+	public void MonthView() throws InterruptedException {
+		Thread.sleep(1000);
+		visibilityOfAllElements(MonthView);
+		MonthView.click();
+		RightArrowClick.click();
+		Thread.sleep(2000);
 	}
 
 	public void CalendarEventsCollection_Week(String Eventname, String Eventweek, String Edate)
@@ -296,10 +339,6 @@ public class CreateCalendarGMEventPage extends AbstractClass {
 		String DLabel2 = DLable1.trim();
 		String EventDate = DLabel2.split(" ")[1];
 		int TodayDate = Integer.parseInt(EventDate);
-//		while (!(TodayDate == EventDates)) {
-//			TodayDate++;
-//			RightArrowClick.click();
-
 		int DateDiff = EventDates - TodayDate;
 		boolean flag = true;
 		if (DateDiff < 0) {
@@ -309,34 +348,63 @@ public class CreateCalendarGMEventPage extends AbstractClass {
 
 		for (int i = 0; i < DateDiff; i++) {
 			if (flag == false) {
-				//Thread.sleep(1000);
+				// Thread.sleep(1000);
 				LeftArrowClick.click();
 			} else {
-				//Thread.sleep(1000);
+				// Thread.sleep(1000);
 				RightArrowClick.click();
 			}
+
 		}
 
 	}
 
-	public void RightArrow_LeftArrow_Week(String MonthandDate) throws InterruptedException {
+	public void RightArrow_LeftArrow_Week(String Week) throws InterruptedException {
 
-		Thread.sleep(2000);
-		String EventDates = MonthandDate;
-		String DateLabel = driver.findElement(By.xpath("//label[@class='tdate']")).getText();
-
-		/*
-		 * DLable1 = DateLabel.split(",")[1]; String DLabel2 = DLable1.trim(); String
-		 * EventDate = DLabel2.split(" ")[1]; int TodayDate =
-		 * Integer.parseInt(EventDate); int DateDiff = EventDates - TodayDate; boolean
-		 * flag = true; if (DateDiff < 0) { flag = false; DateDiff = -1 * DateDiff; }
-		 * 
-		 * for (int i = 0; i < DateDiff; i++) { if (flag == false) { Thread.sleep(1000);
-		 * LeftArrowClick.click(); } else { Thread.sleep(1000); RightArrowClick.click();
-		 * } }
-		 */
+//		Thread.sleep(3000);
+//		String EventDates = Week;
+//		String DateLabel = driver.findElement(By.xpath("//label[@class='tdate']")).getText();
+//		String DLable1 = DateLabel.split(",")[1];
+//		String DLabel2 = DLable1.trim();
+//		String EventDate = DLabel2.split(" ")[1];
+//		int TodayDate = Integer.parseInt(EventDate);
+//	//	int DateDiff = EventDates - TodayDate;
+//		boolean flag = true;
+//		if (DateDiff < 0) {
+//			flag = false;
+//			DateDiff = -1 * DateDiff;
+//		}
+//
+//		for (int i = 0; i < DateDiff; i++) {
+//			if (flag == false) {
+//				// Thread.sleep(1000);
+//				LeftArrowClick.click();
+//			} else {
+//				// Thread.sleep(1000);
+//				RightArrowClick.click();
+//			}
+//
+//		}
 
 	}
+	/*
+	 * public void RightArrow_LeftArrow_Week(String MonthandDate) throws
+	 * InterruptedException {
+	 * 
+	 * Thread.sleep(2000); String EventDates = MonthandDate; String DateLabel =
+	 * driver.findElement(By.xpath("//label[@class='tdate']")).getText();
+	 * 
+	 * DLable1 = DateLabel.split(",")[1]; String DLabel2 = DLable1.trim(); String
+	 * EventDate = DLabel2.split(" ")[1]; int TodayDate =
+	 * Integer.parseInt(EventDate); int DateDiff = EventDates - TodayDate; boolean
+	 * flag = true; if (DateDiff < 0) { flag = false; DateDiff = -1 * DateDiff; }
+	 * 
+	 * for (int i = 0; i < DateDiff; i++) { if (flag == false) { Thread.sleep(1000);
+	 * LeftArrowClick.click(); } else { Thread.sleep(1000); RightArrowClick.click();
+	 * } }
+	 * 
+	 * }
+	 */
 
 	// Month and Time verify
 	@FindBy(xpath = "//div //p[@class='monthtitle']")

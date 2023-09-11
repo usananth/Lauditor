@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="lauditor.test.pages.CreateCalendarGMEventTest">
+      <class name="lauditor.test.pages.CreateMeetingTestBiWeekRep1">
         <methods>
-          <include name="Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_AddEntityClient" invocation-numbers="0"/>
           <include name="launchApplication"/>
+          <include name="repetitionBiWeeklyWithAllDays" invocation-numbers="0"/>
           <include name="down"/>
         </methods>
-      </class> <!-- lauditor.test.pages.CreateCalendarGMEventTest -->
+      </class> <!-- lauditor.test.pages.CreateMeetingTestBiWeekRep1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

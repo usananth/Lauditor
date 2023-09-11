@@ -508,7 +508,7 @@ public class DocumentViewFirmPages extends AbstractClass {
 	WebElement texts;
 
 	public void documentIsDisplay(String documents) throws InterruptedException {
-		scrollUp();
+		ScrollUp();
 		visibilityOfAllElements(texts);
 		String docs = texts.getText();
 		if (documents.contains(docs)) {

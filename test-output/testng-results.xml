@@ -1,32 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="100" total="101" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-25T10:48:08 IST" name="Default suite" finished-at="2023-08-25T10:49:21 IST" duration-ms="72863">
+  <suite started-at="2023-09-11T10:35:28 IST" name="Default suite" finished-at="2023-09-11T10:36:30 IST" duration-ms="62891">
     <groups>
     </groups>
-    <test started-at="2023-08-25T10:48:08 IST" name="Default test" finished-at="2023-08-25T10:49:21 IST" duration-ms="72863">
-      <class name="lauditor.test.pages.CreateCalendarGMEventTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:lauditor.test.pages.CreateCalendarGMEventTest@5c80cf32]" started-at="2023-08-25T10:48:08 IST" name="launchApplication" finished-at="2023-08-25T10:48:12 IST" duration-ms="4314" status="PASS">
+    <test started-at="2023-09-11T10:35:28 IST" name="Default test" finished-at="2023-09-11T10:36:30 IST" duration-ms="62891">
+      <class name="lauditor.test.pages.CreateMeetingTestBiWeekRep1">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:lauditor.test.pages.CreateMeetingTestBiWeekRep1@2a265ea9]" started-at="2023-09-11T10:35:28 IST" name="launchApplication" finished-at="2023-09-11T10:35:36 IST" duration-ms="8766" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda(java.util.HashMap)[pri:100, instance:lauditor.test.pages.CreateCalendarGMEventTest@5c80cf32]" started-at="2023-08-25T10:48:13 IST" name="Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda" data-provider="getData100" finished-at="2023-08-25T10:49:21 IST" duration-ms="67960" status="PASS">
+        <test-method signature="repetitionBiWeeklyWithAllDays(java.util.HashMap)[pri:0, instance:lauditor.test.pages.CreateMeetingTestBiWeekRep1@2a265ea9]" started-at="2023-09-11T10:35:38 IST" name="repetitionBiWeeklyWithAllDays" data-provider="getData0" finished-at="2023-09-11T10:36:30 IST" duration-ms="52283" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Comment=TestCase 100.Calendar_GM_MeetingLink_DialupNumber_Location_MeetingAgenda, DialupNumber=+91 9843114623, Eventmonth=August, MatterName=GST Return, MeetingLink=https://www.google.apiclient.com, EventName=GST Return - Prepare annual fillings, AssertMName=GST Return - Prepare annual fillings, Eventdate=4, Eventyear=2023, Elocation=Newyork, SubjectTaskName=Prepare annual fillings, MAgenda=Everyone Must Participate, AssertMLink=https://www.google.apiclient.com, AssertMAgenda=Everyone Must Participate, AssertDialup=+91 9843114623}]]>
+                <![CDATA[{date=10, meetingLink=https://Teamsmeeting.com/thn-kgbv-gpx, teamMember1=Darian Smith, entityMember1=ELEVEN, currentMonth=9, dialNumber=+91 9658528526364, entityFirmName=Rax professional, document1=TM matter, repetition=Bi-Weekly, currentYear=2023, monthAndTime=, meetingagenda=Please this join the meeting, meetingName=General Matter 4 - Consultation, meetingName1=General Matter 4 - Consultation, entityFirmAssert=Rax professional, repetationCount=2, comment=47.Mandatory Fields All Days , Meeting Link , Dial Number,Location,Meeting agenda , Add TM , Add Entity , Add Individuals with Add Docum, taskName=Consultation, startTime=, location=Kumbakonam,Thanjavur,TN, individualMember1=Dustin, individualsAssert=Dustin S, matterName=General Matter 4}]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=116.0.5845.180)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [855f790aeb4be74a25ef0ace2475e38d, findElement {using=xpath, value=//span[text()='Meetings']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.180, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52485/devtoo..., se:cdpVersion: 116.0.5845.180, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 855f790aeb4be74a25ef0ace2475e38d]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=116.0.5845.180)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [855f790aeb4be74a25ef0ace2475e38d, findElement {using=xpath, value=//span[text()='Meetings']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.180, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52485/devtoo..., se:cdpVersion: 116.0.5845.180, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 855f790aeb4be74a25ef0ace2475e38d
+at jdk.internal.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy17.toString(Unknown Source)
+at java.base/java.lang.String.valueOf(String.java:4215)
+at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
+at java.base/java.util.AbstractCollection.toString(AbstractCollection.java:457)
+at java.base/java.lang.String.valueOf(String.java:4215)
+at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
+at org.openqa.selenium.support.ui.ExpectedConditions$9.toString(ExpectedConditions.java:273)
+at java.base/java.lang.String.valueOf(String.java:4215)
+at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:227)
+at lauditor.abstractclass.AbstractClass.visibilityOfAllElements(AbstractClass.java:53)
+at lauditor.pom.pages.CreateMeetingsPage.leftMeetingTab(CreateMeetingsPage.java:128)
+at lauditor.test.pages.CreateMeetingTestBiWeekRep1.repetitionBiWeeklyWithAllDays(CreateMeetingTestBiWeekRep1.java:57)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+at org.testng.TestNG.runSuites(TestNG.java:1092)
+at org.testng.TestNG.run(TestNG.java:1060)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda -->
-        <test-method is-config="true" signature="down()[pri:0, instance:lauditor.test.pages.CreateCalendarGMEventTest@5c80cf32]" started-at="2023-08-25T10:49:21 IST" name="down" finished-at="2023-08-25T10:49:21 IST" duration-ms="280" status="PASS">
+        </test-method> <!-- repetitionBiWeeklyWithAllDays -->
+        <test-method is-config="true" signature="down()[pri:0, instance:lauditor.test.pages.CreateMeetingTestBiWeekRep1@2a265ea9]" started-at="2023-09-11T10:36:30 IST" name="down" finished-at="2023-09-11T10:36:30 IST" duration-ms="14" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=116.0.5845.180)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [855f790aeb4be74a25ef0ace2475e38d, close {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.180, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52485/devtoo..., se:cdpVersion: 116.0.5845.180, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 855f790aeb4be74a25ef0ace2475e38d]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=116.0.5845.180)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [855f790aeb4be74a25ef0ace2475e38d, close {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.180, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52485/devtoo..., se:cdpVersion: 116.0.5845.180, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 855f790aeb4be74a25ef0ace2475e38d
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:590)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:594)
+at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:418)
+at lauditor.baseClass.BaseClass.down(BaseClass.java:141)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:65)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:381)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:319)
+at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:220)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:130)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+at org.testng.TestNG.runSuites(TestNG.java:1092)
+at org.testng.TestNG.run(TestNG.java:1060)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- down -->
-      </class> <!-- lauditor.test.pages.CreateCalendarGMEventTest -->
+      </class> <!-- lauditor.test.pages.CreateMeetingTestBiWeekRep1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

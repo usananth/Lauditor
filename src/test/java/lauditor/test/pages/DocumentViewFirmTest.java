@@ -34,7 +34,7 @@ public class DocumentViewFirmTest extends BaseClass {
 		Thread.sleep(3000);
 		documentViewFirmPages.actionViewXClose();
 		Thread.sleep(2000);
-		documentViewFirmPages.scrollUp();
+		documentViewFirmPages.ScrollUp();
 		Thread.sleep(3000);
 
 	}
@@ -59,7 +59,7 @@ public class DocumentViewFirmTest extends BaseClass {
 			documentViewFirmPages.editSaveButton();
 			Thread.sleep(3000);
 			documentViewFirmPages.editInfoAlertOK();
-			documentViewFirmPages.scrollUp();
+			documentViewFirmPages.ScrollUp();
 			Thread.sleep(3000);
 		} finally {
 			// TODO: handle finally clause
@@ -86,7 +86,7 @@ public class DocumentViewFirmTest extends BaseClass {
 			documentViewFirmPages.editDocumentField(input.get("documentEdit"));
 			documentViewFirmPages.editCancelButton();
 			Thread.sleep(3000);
-			documentViewFirmPages.scrollUp();
+			documentViewFirmPages.ScrollUp();
 			Thread.sleep(3000);
 		} finally {
 			// TODO: handle finally clause
@@ -114,7 +114,7 @@ public class DocumentViewFirmTest extends BaseClass {
 			documentViewFirmPages.editSaveButton();
 			Thread.sleep(3000);
 			documentViewFirmPages.editInfoAlertOK();
-			documentViewFirmPages.scrollUp();
+			documentViewFirmPages.ScrollUp();
 			Thread.sleep(3000);
 		} finally {
 			// TODO: handle finally clause
@@ -141,7 +141,7 @@ public class DocumentViewFirmTest extends BaseClass {
 			Thread.sleep(3000);
 			documentViewFirmPages.editCancelButton();
 			Thread.sleep(3000);
-			documentViewFirmPages.scrollUp();
+			documentViewFirmPages.ScrollUp();
 		} finally {
 			// TODO: handle finally clause
 		}
@@ -170,7 +170,7 @@ public class DocumentViewFirmTest extends BaseClass {
 			Thread.sleep(3000);
 			documentViewFirmPages.editInfoAlertOK();
 			Thread.sleep(2000);
-			documentViewFirmPages.scrollUp();
+			documentViewFirmPages.ScrollUp();
 			Thread.sleep(2000);
 		} finally {
 			// TODO: handle finally clause
@@ -200,7 +200,7 @@ public class DocumentViewFirmTest extends BaseClass {
 			documentViewFirmPages.editCancelButton();
 			Thread.sleep(3000);
 			documentViewFirmPages.editInfoAlertOK();
-			documentViewFirmPages.scrollUp();
+			documentViewFirmPages.ScrollUp();
 			Thread.sleep(3000);
 		} finally {
 			// TODO: handle finally clause
@@ -228,7 +228,7 @@ public class DocumentViewFirmTest extends BaseClass {
 			documentViewFirmPages.editSaveButton();
 			documentViewFirmPages.editInfoAlertOK();
 			Thread.sleep(2000);
-			documentViewFirmPages.scrollUp();
+			documentViewFirmPages.ScrollUp();
 			Thread.sleep(2000);
 		} finally {
 			// TODO: handle finally clause
@@ -254,7 +254,7 @@ public class DocumentViewFirmTest extends BaseClass {
 			documentViewFirmPages.editDocumentNameandDateFields(input.get("documentEdit"));
 			Thread.sleep(3000);
 			documentViewFirmPages.editCancelButton();
-			documentViewFirmPages.scrollUp();
+			documentViewFirmPages.ScrollUp();
 			Thread.sleep(3000);
 		} finally {
 			// TODO: handle finally clause

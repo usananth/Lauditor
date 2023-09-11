@@ -3369,7 +3369,7 @@ public class CreateCalendarGMEventTest extends BaseClass {
 		}
 
 	}
-	
+
 	@Test(dataProvider = "getData94", priority = 94)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -3405,6 +3405,7 @@ public class CreateCalendarGMEventTest extends BaseClass {
 		}
 
 	}
+
 	@Test(dataProvider = "getData95", priority = 95)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_MeetingAgenda(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -3441,7 +3442,7 @@ public class CreateCalendarGMEventTest extends BaseClass {
 		}
 
 	}
-	
+
 	@Test(dataProvider = "getData96", priority = 96)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_AddTeamMember(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -3479,6 +3480,7 @@ public class CreateCalendarGMEventTest extends BaseClass {
 		}
 
 	}
+
 	@Test(dataProvider = "getData97", priority = 97)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_AddEntityClient(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -3595,7 +3597,7 @@ public class CreateCalendarGMEventTest extends BaseClass {
 		}
 
 	}
-	
+
 	@Test(dataProvider = "getData100", priority = 100)
 	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda(
 			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
@@ -3628,6 +3630,661 @@ public class CreateCalendarGMEventTest extends BaseClass {
 			Thread.sleep(2000);
 		} finally {
 			// createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData101", priority = 101)
+	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_AddTeamMember(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.AllDayCheckBox();
+			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
+			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
+			createCalendarGMEvents.EventLocation(input.get("Elocation"));
+			createCalendarGMEvents.ScrollDownTM();
+			Thread.sleep(3000);
+			createCalendarGMEvents.AddTeamMember(input.get("TeamMember"));
+			createCalendarGMEvents.EventSaveBtn();
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			Thread.sleep(2000);
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertMName"));
+			createCalendarGMEvents.AssertMeetingLink(input.get("AssertMLink"));
+			createCalendarGMEvents.AssertDialupNumber(input.get("AssertDialup"));
+			createCalendarGMEvents.AssertTeamMember(input.get("AssertTMember"));
+			Thread.sleep(2000);
+		} finally {
+			// createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData102", priority = 102)
+	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_AddEntityClient(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.AllDayCheckBox();
+			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
+			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
+			createCalendarGMEvents.EventLocation(input.get("Elocation"));
+			createCalendarGMEvents.ScrollDownTM();
+			Thread.sleep(3000);
+			createCalendarGMEvents.AddEntityFirmSelect(input.get("AEFirm"));
+			createCalendarGMEvents.AddEntityMemberSelect(input.get("AEFMember"));
+			createCalendarGMEvents.EventSaveBtn();
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			Thread.sleep(2000);
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertMName"));
+			createCalendarGMEvents.AssertMeetingLink(input.get("AssertMLink"));
+			createCalendarGMEvents.AssertDialupNumber(input.get("AssertDialup"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertEFirm"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertEFMember"));
+			Thread.sleep(2000);
+		} finally {
+			// createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData103", priority = 103)
+	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_AddDocuments(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.AllDayCheckBox();
+			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
+			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
+			createCalendarGMEvents.EventLocation(input.get("Elocation"));
+			createCalendarGMEvents.ScrollDownTM();
+			Thread.sleep(3000);
+			createCalendarGMEvents.AddDocuments(input.get("AddDocs"));
+			createCalendarGMEvents.EventSaveBtn();
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			Thread.sleep(2000);
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertMName"));
+			createCalendarGMEvents.AssertMeetingLink(input.get("AssertMLink"));
+			createCalendarGMEvents.AssertDialupNumber(input.get("AssertDialup"));
+			createCalendarGMEvents.AssertDocuments(input.get("AssertDocs"));
+
+			Thread.sleep(2000);
+		} finally {
+			// createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData104", priority = 104)
+	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_AddIndividual(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.AllDayCheckBox();
+			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
+			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
+			createCalendarGMEvents.EventLocation(input.get("Elocation"));
+			createCalendarGMEvents.ScrollDownTM();
+			Thread.sleep(3000);
+			createCalendarGMEvents.AddIndividuals(input.get("AddInd"));
+			createCalendarGMEvents.EventSaveBtn();
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			Thread.sleep(2000);
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertMName"));
+			createCalendarGMEvents.AssertMeetingLink(input.get("AssertMLink"));
+			createCalendarGMEvents.AssertDialupNumber(input.get("AssertDialup"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertInd"));
+
+			Thread.sleep(2000);
+		} finally {
+			// createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData105", priority = 105)
+	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddTeamMember(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.AllDayCheckBox();
+			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
+			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
+			createCalendarGMEvents.EventLocation(input.get("Elocation"));
+			createCalendarGMEvents.MeetingAgenda(input.get("MAgenda"));
+			createCalendarGMEvents.ScrollDownTM();
+			Thread.sleep(3000);
+			createCalendarGMEvents.AddTeamMember(input.get("TeamMember"));
+			createCalendarGMEvents.EventSaveBtn();
+			Thread.sleep(2000);
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			Thread.sleep(2000);
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertMName"));
+			createCalendarGMEvents.AssertMeetingLink(input.get("AssertMLink"));
+			createCalendarGMEvents.AssertDialupNumber(input.get("AssertDialup"));
+			createCalendarGMEvents.AssertMeetingAgenda(input.get("AssertMAgenda"));
+			createCalendarGMEvents.AssertTeamMember(input.get("AssertTMember"));
+			Thread.sleep(2000);
+		} finally {
+			// createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData106", priority = 106)
+	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddEntityClient(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.AllDayCheckBox();
+			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
+			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
+			createCalendarGMEvents.EventLocation(input.get("Elocation"));
+			createCalendarGMEvents.MeetingAgenda(input.get("MAgenda"));
+			createCalendarGMEvents.ScrollDownTM();
+			Thread.sleep(3000);
+			createCalendarGMEvents.AddEntityFirmSelect(input.get("AEFirm"));
+			createCalendarGMEvents.AddEntityMemberSelect(input.get("AEFirmMember"));
+			createCalendarGMEvents.EventSaveBtn();
+			Thread.sleep(2000);
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			Thread.sleep(2000);
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertMName"));
+			createCalendarGMEvents.AssertMeetingLink(input.get("AssertMLink"));
+			createCalendarGMEvents.AssertDialupNumber(input.get("AssertDialup"));
+			createCalendarGMEvents.AssertMeetingAgenda(input.get("AssertMAgenda"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertAEFirm"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertAEFMember"));
+			Thread.sleep(2000);
+		} finally {
+			// createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData107", priority = 107)
+	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddDocuments(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.AllDayCheckBox();
+			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
+			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
+			createCalendarGMEvents.EventLocation(input.get("Elocation"));
+			createCalendarGMEvents.MeetingAgenda(input.get("MAgenda"));
+			createCalendarGMEvents.ScrollDownTM();
+			Thread.sleep(3000);
+			createCalendarGMEvents.AddDocuments(input.get("AddDocs"));
+			createCalendarGMEvents.EventSaveBtn();
+			Thread.sleep(2000);
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			Thread.sleep(2000);
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertMName"));
+			createCalendarGMEvents.AssertMeetingLink(input.get("AssertMLink"));
+			createCalendarGMEvents.AssertDialupNumber(input.get("AssertDialup"));
+			createCalendarGMEvents.AssertMeetingAgenda(input.get("AssertMAgenda"));
+			createCalendarGMEvents.AssertDocuments(input.get("AssertDocs"));
+
+			Thread.sleep(2000);
+		} finally {
+			// createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData108", priority = 108)
+	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddIndividual(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.AllDayCheckBox();
+			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
+			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
+			createCalendarGMEvents.EventLocation(input.get("Elocation"));
+			createCalendarGMEvents.MeetingAgenda(input.get("MAgenda"));
+			createCalendarGMEvents.ScrollDownTM();
+			Thread.sleep(3000);
+			createCalendarGMEvents.AddIndividuals(input.get("AddIndiv"));
+			createCalendarGMEvents.EventSaveBtn();
+			Thread.sleep(2000);
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			Thread.sleep(2000);
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertMName"));
+			createCalendarGMEvents.AssertMeetingLink(input.get("AssertMLink"));
+			createCalendarGMEvents.AssertDialupNumber(input.get("AssertDialup"));
+			createCalendarGMEvents.AssertMeetingAgenda(input.get("AssertMAgenda"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertIndiv"));
+
+			Thread.sleep(2000);
+		} finally {
+			// createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData109", priority = 109)
+	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddTeamMember_AddEntityClient(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.AllDayCheckBox();
+			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
+			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
+			createCalendarGMEvents.EventLocation(input.get("Elocation"));
+			createCalendarGMEvents.MeetingAgenda(input.get("MAgenda"));
+			createCalendarGMEvents.ScrollDownTM();
+			Thread.sleep(3000);
+			createCalendarGMEvents.AddTeamMember(input.get("TeamMember"));
+			createCalendarGMEvents.AddEntityFirmSelect(input.get("AEFirm"));
+			createCalendarGMEvents.AddEntityMemberSelect(input.get("AEFirmMember"));
+			createCalendarGMEvents.EventSaveBtn();
+			Thread.sleep(2000);
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			Thread.sleep(2000);
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertMName"));
+			createCalendarGMEvents.AssertMeetingLink(input.get("AssertMLink"));
+			createCalendarGMEvents.AssertDialupNumber(input.get("AssertDialup"));
+			createCalendarGMEvents.AssertMeetingAgenda(input.get("AssertMAgenda"));
+			createCalendarGMEvents.AssertTeamMember(input.get("AssertTMember"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertAEFirm"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertAEFMember"));
+			Thread.sleep(2000);
+		} finally {
+			// createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData110", priority = 110)
+	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddTeamMember_AddDocuments(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.AllDayCheckBox();
+			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
+			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
+			createCalendarGMEvents.EventLocation(input.get("Elocation"));
+			createCalendarGMEvents.MeetingAgenda(input.get("MAgenda"));
+			createCalendarGMEvents.ScrollDownTM();
+			Thread.sleep(3000);
+			createCalendarGMEvents.AddTeamMember(input.get("TeamMember"));
+			createCalendarGMEvents.AddDocuments(input.get("AddDocs"));
+			createCalendarGMEvents.EventSaveBtn();
+			Thread.sleep(2000);
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			Thread.sleep(2000);
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertMName"));
+			createCalendarGMEvents.AssertMeetingLink(input.get("AssertMLink"));
+			createCalendarGMEvents.AssertDialupNumber(input.get("AssertDialup"));
+			createCalendarGMEvents.AssertMeetingAgenda(input.get("AssertMAgenda"));
+			createCalendarGMEvents.AssertTeamMember(input.get("AssertTMember"));
+			createCalendarGMEvents.AssertDocuments(input.get("AssertDocs"));
+
+			Thread.sleep(2000);
+		} finally {
+			// createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData111", priority = 111)
+	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddTeamMember_AddIndividual(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.AllDayCheckBox();
+			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
+			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
+			createCalendarGMEvents.EventLocation(input.get("Elocation"));
+			createCalendarGMEvents.MeetingAgenda(input.get("MAgenda"));
+			createCalendarGMEvents.ScrollDownTM();
+			Thread.sleep(3000);
+			createCalendarGMEvents.AddTeamMember(input.get("TeamMember"));
+			createCalendarGMEvents.AddIndividuals(input.get("AddIndiv"));
+			createCalendarGMEvents.EventSaveBtn();
+			Thread.sleep(2000);
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			Thread.sleep(2000);
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertMName"));
+			createCalendarGMEvents.AssertMeetingLink(input.get("AssertMLink"));
+			createCalendarGMEvents.AssertDialupNumber(input.get("AssertDialup"));
+			createCalendarGMEvents.AssertMeetingAgenda(input.get("AssertMAgenda"));
+			createCalendarGMEvents.AssertTeamMember(input.get("AssertTMember"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertIndiv"));
+
+			Thread.sleep(2000);
+		} finally {
+			// createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData112", priority = 112)
+	public void Calendar_GMManFields_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddTeamMember_AddIndividual_AddEntityClient_AddDocument(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.AllDayCheckBox();
+			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
+			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
+			createCalendarGMEvents.EventLocation(input.get("Elocation"));
+			createCalendarGMEvents.MeetingAgenda(input.get("MAgenda"));
+			createCalendarGMEvents.ScrollDownTM();
+			Thread.sleep(3000);
+			createCalendarGMEvents.AddTeamMember(input.get("TeamMember"));
+			createCalendarGMEvents.AddEntityFirmSelect(input.get("AEFirm"));
+			createCalendarGMEvents.AddEntityMemberSelect(input.get("AEFMember"));
+			createCalendarGMEvents.AddIndividuals(input.get("AddIndiv"));
+			createCalendarGMEvents.AddDocuments(input.get("AddDocs"));
+			createCalendarGMEvents.EventSaveBtn();
+			Thread.sleep(2000);
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			Thread.sleep(2000);
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertMName"));
+			createCalendarGMEvents.AssertMeetingLink(input.get("AssertMLink"));
+			createCalendarGMEvents.AssertDialupNumber(input.get("AssertDialup"));
+			createCalendarGMEvents.AssertMeetingAgenda(input.get("AssertMAgenda"));
+			createCalendarGMEvents.AssertTeamMember(input.get("AssertTMember"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertAEFirm"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertAEFMember"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertIndiv"));
+			createCalendarGMEvents.AssertDocuments(input.get("AssertDocs"));
+
+			Thread.sleep(2000);
+		} finally {
+			// createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData113", priority = 113)
+	public void Calendar_GMManFields_AddtoTimesheet_AllDay_MeetingLink_DialupNumber_Location_MeetingAgenda_AddTeamMember_AddIndividual_AddEntityClient_AddDocument(
+			HashMap<String, String> input) throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.AllDayCheckBox();
+			createCalendarGMEvents.MeetingLinkField(input.get("MeetingLink"));
+			createCalendarGMEvents.DialUpNumber(input.get("DialupNumber"));
+			createCalendarGMEvents.EventLocation(input.get("Elocation"));
+			createCalendarGMEvents.MeetingAgenda(input.get("MAgenda"));
+			createCalendarGMEvents.ScrollDownTM();
+			Thread.sleep(3000);
+			createCalendarGMEvents.AddTeamMember(input.get("TeamMember"));
+			createCalendarGMEvents.AddEntityFirmSelect(input.get("AEFirm"));
+			createCalendarGMEvents.AddEntityMemberSelect(input.get("AEFMember"));
+			createCalendarGMEvents.AddIndividuals(input.get("AddIndiv"));
+			createCalendarGMEvents.AddDocuments(input.get("AddDocs"));
+			createCalendarGMEvents.EventSaveBtn();
+			Thread.sleep(2000);
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.InnerScrollAllDay();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			Thread.sleep(2000);
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertMName"));
+			createCalendarGMEvents.AssertMeetingLink(input.get("AssertMLink"));
+			createCalendarGMEvents.AssertDialupNumber(input.get("AssertDialup"));
+			createCalendarGMEvents.AssertMeetingAgenda(input.get("AssertMAgenda"));
+			createCalendarGMEvents.AssertTeamMember(input.get("AssertTMember"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertAEFirm"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertAEFMember"));
+			createCalendarGMEvents.AssertEntityandIndividual(input.get("AssertIndiv"));
+			createCalendarGMEvents.AssertDocuments(input.get("AssertDocs"));
+
+			Thread.sleep(2000);
+		} finally {
+			// createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+
+	@Test(dataProvider = "getData114", priority = 114)
+	public void CGMEventCreation_Task_Consultation_Repet_Daily(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.EventStratTime(input.get("EStartTime"));
+			createCalendarGMEvents.EventEndTime(input.get("EEndTime"));
+			createCalendarGMEvents.RepetitionSelection(input.get("Repetition"));
+			createCalendarGMEvents.EventSaveBtn();
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertCheck"));
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.EventViewTap();
+			createCalendarGMEvents.WeekView();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertCheck"));
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.EventViewTap();
+			createCalendarGMEvents.MonthView();
+			createCalendarGMEvents.CalendarEventsSelectionMonths(input.get("EventName"));
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertCheck"));
+		} finally {
+			createCalendarGMEvents.MeetingsSideMenu();
+
+		}
+
+	}
+	@Test(dataProvider = "getData115", priority = 115)
+	public void CGMEventCreation_Task_Consultation_Daily(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.CreateMeetingsBtn();
+			createCalendarGMEvents.GeneralMatterRadioBtn();
+			createCalendarGMEvents.MatterNameSelection(input.get("MatterName"));
+			createCalendarGMEvents.SubjectORTaskSelection(input.get("SubjectTaskName"));
+			createCalendarGMEvents.EventDatePickerSelection(input.get("Eventdate"), input.get("Eventmonth"),
+					input.get("Eventyear"));
+			createCalendarGMEvents.EventStratTime(input.get("EStartTime"));
+			createCalendarGMEvents.EventEndTime(input.get("EEndTime"));
+			createCalendarGMEvents.RepetitionSelection(input.get("Repetition"));
+			createCalendarGMEvents.EventSaveBtn();
+			createCalendarGMEvents.ESaveViewChanges();
+			createCalendarGMEvents.RightArrow_LeftArrow_Date(input.get("Eventdate"));
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertCheck"));
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.EventViewTap();
+			createCalendarGMEvents.WeekView();
+			createCalendarGMEvents.CalendarEventsCollection(input.get("EventName"));
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertCheck"));
+			createCalendarGMEvents.MeetingsSideMenu();
+			createCalendarGMEvents.EventViewTap();
+			createCalendarGMEvents.MonthView();
+			createCalendarGMEvents.CalendarEventsSelectionMonths(input.get("EventName"));
+			createCalendarGMEvents.ScrollToUp();
+			Thread.sleep(2000);
+			createCalendarGMEvents.AssertMeetingName(input.get("AssertCheck"));
+		} finally {
+			createCalendarGMEvents.MeetingsSideMenu();
 
 		}
 
@@ -4641,6 +5298,216 @@ public class CreateCalendarGMEventTest extends BaseClass {
 		return new Object[][] { { data.get(100) } };
 
 	}
+
+	@DataProvider
+	public Object[][] getData101() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(101) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData102() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(102) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData103() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(103) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData104() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(104) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData105() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(105) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData106() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(106) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData107() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(107) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData108() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(108) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData109() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(109) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData110() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(110) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData111() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(111) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData112() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(112) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData113() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(113) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData114() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(114) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData115() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(115) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData116() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(116) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData117() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(117) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData118() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(118) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData119() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(119) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData120() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(120) } };
+
+	}
+
+	@DataProvider
+	public Object[][] getData121() throws IOException {
+
+		List<HashMap<String, String>> data = getJsonDataToMap(
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\CalendarGeneralMatterEvents.json");
+
+		return new Object[][] { { data.get(121) } };
+
+	}
 	/*
 	 * @Test(dataProvider = "getData0", priority = 0) public void
 	 * CGMEventCreation_Task_Consultation_Repet_Daily(HashMap<String, String> input)
@@ -4668,7 +5535,7 @@ public class CreateCalendarGMEventTest extends BaseClass {
 	 * 
 	 * }
 	 * 
-	 * @Test(dataProvider = "getData1", priority = 1) public void
+	 * / * @Test(dataProvider = "getData1", priority = 1) public void
 	 * CGMEventCreation_Task_Consultation_Repet_Weekly(HashMap<String, String>
 	 * input) throws InterruptedException, AWTException, IOException {
 	 * 
