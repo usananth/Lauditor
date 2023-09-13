@@ -6,7 +6,7 @@
       <class name="lauditor.test.pages.CreateMeetingTestBiWeekRep1">
         <methods>
           <include name="launchApplication"/>
-          <include name="repetitionBiWeeklyWithAllDays" invocation-numbers="0"/>
+          <include name="repetitionBiWeeklyWithAllDays"/>
           <include name="down"/>
         </methods>
       </class> <!-- lauditor.test.pages.CreateMeetingTestBiWeekRep1 -->
