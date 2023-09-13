@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-import org.openqa.selenium.devtools.v112.css.model.CSSStyleSheetHeader;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
