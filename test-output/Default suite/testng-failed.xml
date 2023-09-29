@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="lauditor.test.pages.CreateMeetingTestBiWeekRep1">
+      <class name="lauditor.test.pages.EditMeetingTest">
         <methods>
           <include name="launchApplication"/>
-          <include name="repetitionBiWeeklyWithAllDays"/>
           <include name="down"/>
+          <include name="editMeeting" invocation-numbers="0"/>
         </methods>
-      </class> <!-- lauditor.test.pages.CreateMeetingTestBiWeekRep1 -->
+      </class> <!-- lauditor.test.pages.EditMeetingTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

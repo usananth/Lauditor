@@ -2,31 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-11T12:01:29 IST" name="Default suite" finished-at="2023-09-11T12:03:14 IST" duration-ms="104518">
+  <suite started-at="2023-09-28T13:28:24 IST" name="Default suite" finished-at="2023-09-28T13:30:29 IST" duration-ms="125617">
     <groups>
     </groups>
-    <test started-at="2023-09-11T12:01:29 IST" name="Default test" finished-at="2023-09-11T12:03:14 IST" duration-ms="104518">
-      <class name="lauditor.test.pages.CreateMeetingTestBiWeekRep1">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:lauditor.test.pages.CreateMeetingTestBiWeekRep1@26d9b808]" started-at="2023-09-11T12:01:29 IST" name="launchApplication" finished-at="2023-09-11T12:01:36 IST" duration-ms="7043" status="PASS">
+    <test started-at="2023-09-28T13:28:24 IST" name="Default test" finished-at="2023-09-28T13:30:29 IST" duration-ms="125617">
+      <class name="lauditor.test.pages.EditMeetingTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:lauditor.test.pages.EditMeetingTest@2a5c8d3f]" started-at="2023-09-28T13:28:24 IST" name="launchApplication" finished-at="2023-09-28T13:28:29 IST" duration-ms="5231" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="repetitionBiWeeklyWithAllDays(java.util.HashMap)[pri:0, instance:lauditor.test.pages.CreateMeetingTestBiWeekRep1@26d9b808]" started-at="2023-09-11T12:01:37 IST" name="repetitionBiWeeklyWithAllDays" data-provider="getData0" finished-at="2023-09-11T12:03:14 IST" duration-ms="96489" status="PASS">
+        <test-method signature="editMeeting(java.util.HashMap)[pri:1, instance:lauditor.test.pages.EditMeetingTest@2a5c8d3f]" started-at="2023-09-28T13:28:30 IST" name="editMeeting" data-provider="getData1" finished-at="2023-09-28T13:30:29 IST" duration-ms="119611" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{date=10, meetingLink=https://Teamsmeeting.com/thn-kgbv-gpx, teamMember1=Darian Smith, entityMember1=Madhan, currentMonth=9, dialNumber=+91 9658528526364, entityFirmName=Staging Coffer Connect, document1=TM matter, repetition=Bi-Weekly, currentYear=2023, monthAndTime=, meetingagenda=Please this join the meeting, meetingName=General Matter 4 - Consultation, meetingName1=General Matter 4 - Consultation, entityFirmAssert=Staging Coffer Connect, repetationCount=2, comment=47.Mandatory Fields All Days , Meeting Link , Dial Number,Location,Meeting agenda , Add TM , Add Entity , Add Individuals with Add Docum, taskName=Consultation, startTime=, location=Kumbakonam,Thanjavur,TN, individualMember1=Dustin, individualsAssert=Dustin S, matterName=General Matter 4}]]>
+                <![CDATA[{date=27, meetingLink=http://meetingTeams.com//, meetingnameAssert=TM-GM-Test - Consultation, year=2023, entityFirmName1=, scrollTime=6, teamMember1=, entityMember1=, dialNumber=8596859696, entityFirmName=, document1=, date1=September 27, 2023, monthAndTime= : 12:45 PM - 1:15 PM, meetingagenda=, meetingName=12:45 PM TM-GM-Test - Consultation, month=9, comment=56.Edit Meeting Link and Dial number with normal scenario, location=, individualMember1=, individualsAssert=}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- repetitionBiWeeklyWithAllDays -->
-        <test-method is-config="true" signature="down()[pri:0, instance:lauditor.test.pages.CreateMeetingTestBiWeekRep1@26d9b808]" started-at="2023-09-11T12:03:14 IST" name="down" finished-at="2023-09-11T12:03:14 IST" duration-ms="236" status="PASS">
+        </test-method> <!-- editMeeting -->
+        <test-method is-config="true" signature="down()[pri:0, instance:lauditor.test.pages.EditMeetingTest@2a5c8d3f]" started-at="2023-09-28T13:30:29 IST" name="down" finished-at="2023-09-28T13:30:29 IST" duration-ms="227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- down -->
-      </class> <!-- lauditor.test.pages.CreateMeetingTestBiWeekRep1 -->
+      </class> <!-- lauditor.test.pages.EditMeetingTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

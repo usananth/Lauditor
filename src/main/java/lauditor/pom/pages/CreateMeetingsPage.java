@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import lauditor.abstractclass.AbstractClass;
+import lauditor.abstractclass.*;
 
 public class CreateMeetingsPage extends AbstractClass {
 
@@ -29,7 +29,7 @@ public class CreateMeetingsPage extends AbstractClass {
 
 	// Event Type Legal
 	@FindBy(id = "generalMatter")
-	WebElement generalMatter;
+	WebElement generalEventTypeBtn;
 
 	// MatterName
 	@FindBy(xpath = "//div //select")
@@ -121,6 +121,8 @@ public class CreateMeetingsPage extends AbstractClass {
 	@FindBy(xpath = "//button[text()='View Changes']")
 	WebElement viewChangesButton;
 
+	@FindBy(xpath="//a[text()='Day']")
+	WebElement viewdayTab;
 //----------------------------------------------------------------------------------------------------------
 
 	// Left side Meeting Tab
@@ -131,6 +133,14 @@ public class CreateMeetingsPage extends AbstractClass {
 		scrollUp();
 		Thread.sleep(2000);
 	}
+	
+	public void viewDayTab() throws InterruptedException
+	{
+		visibilityOfAllElements(viewdayTab);
+		Thread.sleep(3000);
+		viewdayTab.click();
+	}
+	
 
 	// CreateTab
 	public void createTab() {
@@ -140,8 +150,8 @@ public class CreateMeetingsPage extends AbstractClass {
 
 	// Event Type
 	public void GeneralMatter() {
-		visibilityOfAllElements(generalMatter);
-		generalMatter.click();
+		visibilityOfAllElements(generalEventTypeBtn);
+		generalEventTypeBtn.click();
 	}
 
 	// Matter Name Method
@@ -223,6 +233,7 @@ public class CreateMeetingsPage extends AbstractClass {
 	public void meetingLink(String text) {
 		if (!text.equals("")) {
 			visibilityOfAllElements(meetingLinkInput);
+			meetingLinkInput.clear();
 			meetingLinkInput.sendKeys(text);
 		}
 	}
@@ -231,6 +242,7 @@ public class CreateMeetingsPage extends AbstractClass {
 	public void dialNumber(String text) {
 		if (!text.equals("")) {
 			visibilityOfAllElements(dialNumberInput);
+			dialNumberInput.clear();
 			dialNumberInput.sendKeys(text);
 		}
 	}
@@ -239,6 +251,7 @@ public class CreateMeetingsPage extends AbstractClass {
 	public void location(String text) {
 		if (!text.equals("")) {
 			visibilityOfAllElements(locationInput);
+			locationInput.clear();
 			locationInput.sendKeys(text);
 		}
 	}
@@ -247,6 +260,7 @@ public class CreateMeetingsPage extends AbstractClass {
 	public void meetingAgenda(String text) {
 		if (!text.equals("")) {
 			visibilityOfAllElements(meetingAgendaInput);
+			meetingAgendaInput.clear();
 			meetingAgendaInput.sendKeys(text);
 		}
 	}
@@ -344,4 +358,15 @@ public class CreateMeetingsPage extends AbstractClass {
 		js.executeScript("window.scrollTo(0,0)");
 	}
 
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

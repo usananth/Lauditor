@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import lauditor.baseClass.*;
 
 public class CreateMeetingTestYearlyRep extends BaseClass {
@@ -61,7 +62,7 @@ public class CreateMeetingTestYearlyRep extends BaseClass {
 	public Object[][] getData0() throws IOException {
 
 		List<HashMap<String, String>> data = getJsonDataToMap(
-				"C:\\Users\\Vengadesh\\git\\LauditorV3Codes\\Lauditor\\src\\test\\java\\file\\data\\meeting\\createMeetingdataYearly.json");
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\Meeting\\createMeetingdataYearly.json");
 
 		return new Object[][] { { data.get(0) }, { data.get(1) }, { data.get(2) }, { data.get(3) }, { data.get(4) },
 				{ data.get(5) }, { data.get(6) }, { data.get(7) }, { data.get(8) }, { data.get(9) }, { data.get(10) },
@@ -78,14 +79,4 @@ public class CreateMeetingTestYearlyRep extends BaseClass {
 
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

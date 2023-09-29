@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import lauditor.baseClass.*;
 
 public class CreateMeetingTestDailyRep1 extends BaseClass {
@@ -39,7 +40,7 @@ public class CreateMeetingTestDailyRep1 extends BaseClass {
 			Thread.sleep(2000);
 			viewMeeting.monthTab();
 			Thread.sleep(2000);
-			viewMeeting.reptitionTextVerify1(input.get("date"), input.get("currentYear"), input.get("currentMonth"),
+			viewMeeting.reptitionTextVerify2(input.get("date"), input.get("currentYear"), input.get("currentMonth"),
 					input.get("repetationCount"), input.get("meetingName"), input.get("meetingName1"),
 					input.get("monthAndTime"), input.get("meetingagenda"), input.get("meetingLink"),
 					input.get("dialNumber"), input.get("document1"), input.get("teamMember1"),
