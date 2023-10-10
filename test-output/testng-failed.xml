@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="lauditor.test.pages.EditMeetingTest">
+      <class name="lauditor.test.pages.MergePDFTest">
         <methods>
           <include name="launchApplication"/>
           <include name="down"/>
-          <include name="editMeeting" invocation-numbers="0"/>
+          <include name="DocuemntMergePDFFirmsShowBookmarks"/>
         </methods>
-      </class> <!-- lauditor.test.pages.EditMeetingTest -->
+      </class> <!-- lauditor.test.pages.MergePDFTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -11,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -25,16 +26,27 @@ public class AbstractClass {
 		this.driver = driver;
 	}
 
+	public void scrollHeight() throws InterruptedException {
+        Thread.sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+    }
 	public void pageDown() throws InterruptedException {
 		Thread.sleep(3000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
 	}
 
+	public void scrollDown() throws InterruptedException {
+		Thread.sleep(3000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,700)");
+	}
+
 	public void ScrollUp() throws InterruptedException {
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0,46)");
+		js.executeScript("window.scrollTo(0,400)");
 	}
 
 	public void visibilityOfElementWait(WebElement element) {
@@ -59,23 +71,23 @@ public class AbstractClass {
 
 	}
 
-	public void selectDocumentorRemoveDocument(String[] NameList, List<WebElement> allNamesText,
+	public void selectDocumentorRemoveDocument(String[] NameList, List<WebElement> listofGroups,
 			List<WebElement> removeOrSelectBtn) throws InterruptedException {
 		Thread.sleep(2000);
 		List<String> groupNames = Arrays.asList(NameList);
 		String textGroup = new String();
 
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		WebElement checkboxSelectedGroupName;
-		for (int i = 0; i < allNamesText.size(); i++) {
-			textGroup = allNamesText.get(i).getText();
+		WebElement selectGroup;
+		for (int i = 0; i < listofGroups.size(); i++) {
+			textGroup = listofGroups.get(i).getText();
 			// System.out.println("All Group Name Text "+textGroup);
 			if (groupNames.contains(textGroup)) {
 				// Thread.sleep(2000);
-				checkboxSelectedGroupName = removeOrSelectBtn.get(i);
-				visibilityOfAllElements(checkboxSelectedGroupName);
+				selectGroup = removeOrSelectBtn.get(i);
+				visibilityOfAllElements(selectGroup);
 				Thread.sleep(2000);
-				executor.executeScript("arguments[0].click();", checkboxSelectedGroupName);
+				executor.executeScript("arguments[0].click();", selectGroup);
 				i--;
 			}
 		}
@@ -111,6 +123,53 @@ public class AbstractClass {
 		Thread.sleep(3000);
 		Select selectList = new Select(nameTasks);
 		selectList.selectByVisibleText(name);
+	}
+
+	
+
+	// Groups select and Remove
+	public void selectGroups(String[] SelectGroups, List<WebElement> listofGroups, List<WebElement> selectBtn)
+			throws InterruptedException {
+		Thread.sleep(2000);
+		List<String> groupNames = Arrays.asList(SelectGroups);
+		String textGroup = new String();
+
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		
+		for (int i = 0; i < listofGroups.size(); i++) {
+			textGroup = listofGroups.get(i).getText();
+			// System.out.println("All Group Name Text "+textGroup);
+			if (groupNames.contains(textGroup)) {
+				// Thread.sleep(2000);
+				WebElement selectGroup = selectBtn.get(i);
+				visibilityOfAllElements(selectGroup);
+				Thread.sleep(2000);
+				executor.executeScript("arguments[0].click();", selectGroup);
+			}
+		}
+
+	}
+	public void searchDocuments(String DocsName,List<WebElement> allDocumElements,List<WebElement> checkboxBtn) throws InterruptedException {
+		
+
+		scrollDown();
+		Thread.sleep(4000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		// List<String> selectedDocsNames = Arrays.asList(selectDocs);
+
+		for (int i = 0; i < allDocumElements.size(); i++) {
+			String allDocumentNames = allDocumElements.get(i).getText();
+			Thread.sleep(3000);
+			if (DocsName.contains(allDocumentNames)) {
+				Thread.sleep(3000);
+				WebElement selectDocuments = checkboxBtn.get(i);
+				js.executeScript("arguments[0].click();", selectDocuments);
+				System.out.println(selectDocuments);
+
+			}
+
+		}
+
 	}
 
 }

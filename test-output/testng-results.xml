@@ -2,31 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-28T13:28:24 IST" name="Default suite" finished-at="2023-09-28T13:30:29 IST" duration-ms="125617">
+  <suite started-at="2023-10-10T16:01:50 IST" name="Default suite" finished-at="2023-10-10T16:03:34 IST" duration-ms="104115">
     <groups>
     </groups>
-    <test started-at="2023-09-28T13:28:24 IST" name="Default test" finished-at="2023-09-28T13:30:29 IST" duration-ms="125617">
-      <class name="lauditor.test.pages.EditMeetingTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:lauditor.test.pages.EditMeetingTest@2a5c8d3f]" started-at="2023-09-28T13:28:24 IST" name="launchApplication" finished-at="2023-09-28T13:28:29 IST" duration-ms="5231" status="PASS">
+    <test started-at="2023-10-10T16:01:50 IST" name="Default test" finished-at="2023-10-10T16:03:34 IST" duration-ms="104115">
+      <class name="lauditor.test.pages.MergePDFTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:lauditor.test.pages.MergePDFTest@b2c9a9c]" started-at="2023-10-10T16:01:50 IST" name="launchApplication" finished-at="2023-10-10T16:01:55 IST" duration-ms="5151" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="editMeeting(java.util.HashMap)[pri:1, instance:lauditor.test.pages.EditMeetingTest@2a5c8d3f]" started-at="2023-09-28T13:28:30 IST" name="editMeeting" data-provider="getData1" finished-at="2023-09-28T13:30:29 IST" duration-ms="119611" status="PASS">
+        <test-method signature="DocuemntMergePDFFirmsShowBookmarksCancel(java.util.HashMap)[pri:0, instance:lauditor.test.pages.MergePDFTest@b2c9a9c]" started-at="2023-10-10T16:01:55 IST" name="DocuemntMergePDFFirmsShowBookmarksCancel" data-provider="getData8" finished-at="2023-10-10T16:03:34 IST" duration-ms="98522" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{date=27, meetingLink=http://meetingTeams.com//, meetingnameAssert=TM-GM-Test - Consultation, year=2023, entityFirmName1=, scrollTime=6, teamMember1=, entityMember1=, dialNumber=8596859696, entityFirmName=, document1=, date1=September 27, 2023, monthAndTime= : 12:45 PM - 1:15 PM, meetingagenda=, meetingName=12:45 PM TM-GM-Test - Consultation, month=9, comment=56.Edit Meeting Link and Dial number with normal scenario, location=, individualMember1=, individualsAssert=}]]>
+                <![CDATA[{Comment=TestCase 8.DocuemntMergePDFFirmsShowBookmarksCancel, selectGroup2=Dev Environmental Testing, selectGroup1=Blaine Miller Group, preambleText=This is example for Preamble Text, BookName=Name of the Bookmark, preamTextarea=Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book., BookTitle=Title of Bookmark, newPdfName=NewMerge7, BookTitle1=Title of Bookmark Two, BookTextarea1=Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book, BookTextarea=Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book, BookName1=Name of the Bookmark Two, selectGroup3=My Test, searchDoc2=samplepdf2, searchDoc1=samplepdf1}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- editMeeting -->
-        <test-method is-config="true" signature="down()[pri:0, instance:lauditor.test.pages.EditMeetingTest@2a5c8d3f]" started-at="2023-09-28T13:30:29 IST" name="down" finished-at="2023-09-28T13:30:29 IST" duration-ms="227" status="PASS">
+        </test-method> <!-- DocuemntMergePDFFirmsShowBookmarksCancel -->
+        <test-method is-config="true" signature="down()[pri:0, instance:lauditor.test.pages.MergePDFTest@b2c9a9c]" started-at="2023-10-10T16:03:34 IST" name="down" finished-at="2023-10-10T16:03:34 IST" duration-ms="171" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- down -->
-      </class> <!-- lauditor.test.pages.EditMeetingTest -->
+      </class> <!-- lauditor.test.pages.MergePDFTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

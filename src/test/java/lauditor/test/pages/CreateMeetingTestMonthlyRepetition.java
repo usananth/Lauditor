@@ -8,10 +8,11 @@ import org.testng.annotations.Test;
 
 import lauditor.baseClass.*;
 
-public class CreateMeetingTestBiWeekRep extends BaseClass {
-
+public class CreateMeetingTestMonthlyRepetition extends BaseClass {
+	
+	
 	@Test(dataProvider = "getData0", priority = 0)
-	public void repetitionBiWeekly(HashMap<String, String> input) throws InterruptedException {
+	public void repetitionMonthly(HashMap<String, String> input) throws InterruptedException {
 
 		try {
 			createMeeting.leftMeetingTab();
@@ -57,12 +58,13 @@ public class CreateMeetingTestBiWeekRep extends BaseClass {
 		}
 	}
 
+	
 	//
 	@DataProvider
 	public Object[][] getData0() throws IOException {
 
 		List<HashMap<String, String>> data = getJsonDataToMap(
-				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\Meeting\\createMeetingdataBiWeekly.json");
+				"F:\\ANANTH\\Eclipse-Workspace\\Law\\src\\test\\java\\Data\\Calendar\\Meeting\\createMeetingdataMonthly.json");
 
 		return new Object[][] { { data.get(0) }, { data.get(1) }, { data.get(2) }, { data.get(3) }, { data.get(4) },
 				{ data.get(5) }, { data.get(6) }, { data.get(7) }, { data.get(8) }, { data.get(9) }, { data.get(10) },
@@ -76,7 +78,17 @@ public class CreateMeetingTestBiWeekRep extends BaseClass {
 				{ data.get(46) }, { data.get(47) }, { data.get(48) }, { data.get(49) }, { data.get(50) },
 				{ data.get(51) }, { data.get(52) }, { data.get(53) }, { data.get(54) }, { data.get(55) },
 				{ data.get(56) }, { data.get(57) }, { data.get(58) }, { data.get(59) } };
-
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

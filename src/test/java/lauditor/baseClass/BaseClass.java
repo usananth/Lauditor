@@ -29,6 +29,7 @@ import lauditor.pom.pages.DashBoard;
 import lauditor.pom.pages.DocumentUploadFirmPages;
 import lauditor.pom.pages.DocumentViewFirmPages;
 import lauditor.pom.pages.LoginPage;
+import lauditor.pom.pages.MergePDFPage;
 import lauditor.pom.pages.SingleTestCaseCalendarPage;
 import lauditor.pom.pages.ViewMeetingsPage;
 
@@ -44,6 +45,8 @@ public class BaseClass {
 	public CreateMeetingsPage createMeeting;
 	public SingleTestCaseCalendarPage SingleTest;
 	public ViewMeetingsPage viewMeeting;
+	public MergePDFPage mergePDFPage;
+
 
 	public WebDriver initalize() throws IOException {
 
@@ -131,6 +134,7 @@ public class BaseClass {
 		createMeeting = new CreateMeetingsPage(driver);
 		viewMeeting = new ViewMeetingsPage(driver);
 		SingleTest= new SingleTestCaseCalendarPage(driver);
+		mergePDFPage=new MergePDFPage(driver);
 //		calendarViewMeetingsPage= new CalendarViewMeetingsPage(driver);
 //		CreateMeetigns=new CalendarViewMeetingsPage(driver);
 		return loginPage;

@@ -29,7 +29,7 @@ public class CreateMeetingsPage extends AbstractClass {
 
 	// Event Type Legal
 	@FindBy(id = "generalMatter")
-	WebElement generalEventTypeBtn;
+	WebElement generalMatter;
 
 	// MatterName
 	@FindBy(xpath = "//div //select")
@@ -150,8 +150,8 @@ public class CreateMeetingsPage extends AbstractClass {
 
 	// Event Type
 	public void GeneralMatter() {
-		visibilityOfAllElements(generalEventTypeBtn);
-		generalEventTypeBtn.click();
+		visibilityOfAllElements(generalMatter);
+		generalMatter.click();
 	}
 
 	// Matter Name Method
