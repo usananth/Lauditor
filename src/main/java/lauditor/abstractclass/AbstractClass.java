@@ -31,12 +31,22 @@ public class AbstractClass {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }
+		
 	public void pageDown() throws InterruptedException {
 		Thread.sleep(3000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
 	}
-
+	public void pageDown1() throws InterruptedException {
+		Thread.sleep(3000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,100)");
+	}
+	public void pageDown2() throws InterruptedException {
+		Thread.sleep(3000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,450)");
+	}
 	public void scrollDown() throws InterruptedException {
 		Thread.sleep(3000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -48,7 +58,17 @@ public class AbstractClass {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,400)");
 	}
-
+	public void ScrollUpInv() throws InterruptedException {
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,250)");
+	}
+	public void ScrollUpInv1() throws InterruptedException {
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,100)");
+	}
+	
 	public void visibilityOfElementWait(WebElement element) {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		// wait.until(ExpectedConditions.visibilityOfElementLocated(submitBtn));
@@ -117,6 +137,31 @@ public class AbstractClass {
 		}
 
 	}
+	
+	public static void getFile1(String path) throws InterruptedException {
+		File directory = new File(path);
+		String allimages = "";
+		File[] flist = directory.listFiles();
+
+		for (File file : flist) {
+			if (file.isFile()) {
+				allimages = allimages + "\"" + file.getName() + "\"" + " ";
+			}
+		}
+
+		try {
+			Thread.sleep(5000);
+			Runtime.getRuntime().exec("F:\\ExeFiles\\getthefolder.exe" + " " + directory + File.separator);
+			Thread.sleep(5000);
+			Runtime.getRuntime().exec("F:\\ExeFiles\\selectalltoopen.exe" + " " + allimages);
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
 
 	// Select Class
 	public void SelectingNames(WebElement nameTasks, String name) throws InterruptedException {

@@ -162,7 +162,7 @@ public class CreateMeetingsPage extends AbstractClass {
 			SelectingNames(listLegalNames, name);
 			listLegalNames.click();
 		}
-	}
+	}	
 
 	// Subject/Task Method
 	public void taskName(String name) throws InterruptedException {

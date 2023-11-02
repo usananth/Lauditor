@@ -1,0 +1,323 @@
+[
+	{
+		"Comment": "TestCase 0.CreateInvoiceWithoutDiscountTypeTaxType",
+		"filePath": "F:\\InvoiceLogo\\logojpg",
+		"Eventdate": "18",
+		"clientName": "Dustin S",
+		"clientAddress": "36, Suppaiyah Nagar, Mannargudi-614001",
+		"Eventdate1": "30",
+		"invDescription": "Lorem ipsum is placeholder text commonly used in the graphic.",
+		"invRate": 1000,
+		"invQty": 10,
+		"invNotes":"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invDate":"Oct 18, 2023",
+		"invClientName":"Dustin S",
+		"invDueDate":"Oct 30, 2023"
+		
+	},
+	
+	{
+		"Comment": "TestCase 1.CreateInvoiceWithoutDiscountTypeTaxTypeCancel",
+		"filePath": "F:\\InvoiceLogo\\logojpg",
+		"Eventdate": "18",
+		"clientName": "Dustin S",
+		"clientAddress": "36, Suppaiyah Nagar, Mannargudi-614001",
+		"Eventdate1": "30",
+		"invDescription": "Lorem ipsum is placeholder text commonly used in the graphic.",
+		"invRate": 1000,
+		"invQty": 10,
+		"invNotes":"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invDate":"Oct 18, 2023",
+		"invClientName":"Dustin S",
+		"invDueDate":"Oct 30, 2023"
+		
+	},
+	
+	{
+		"Comment": "TestCase 2.CreateInvoiceWithoutDiscountFieldEdit",
+		"filePath": "F:\\InvoiceLogo\\logojpg",
+		"Eventdate": "18",
+		"clientName": "Dustin S",
+		"clientAddress": "36, Suppaiyah Nagar, Mannargudi-614001",
+		"Eventdate1": "30",
+		"invDescription": "Lorem ipsum is placeholder text commonly used in the graphic.",
+		"invRate": 2000,
+		"invQty": 10,
+		"DiscTypeP": "5",
+		"TaxType": "Annual Tax",
+		"TaxTypeP": "5",
+		"invNotes":"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+	
+		
+	},
+	
+	{
+		"Comment": "TestCase 3.CreateInvoiceWithoutDiscountFieldEditCancel",
+		"filePath": "F:\\InvoiceLogo\\logojpg",
+		"Eventdate": "18",
+		"clientName": "Dustin S",
+		"clientAddress": "36, Suppaiyah Nagar, Mannargudi-614001",
+		"Eventdate1": "30",
+		"invDescription": "Lorem ipsum is placeholder text commonly used in the graphic.",
+		"invRate": 2000,
+		"invQty": 10,
+		"DiscTypeP": "5",
+		"TaxType": "Annual Tax",
+		"TaxTypeP": "5",
+		"invNotes":"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+	
+		
+	},
+	
+	
+	{
+		"Comment": "TestCase 4.CreateInvoiceWithoutDiscoutPercentage",
+		"filePath": "F:\\InvoiceLogo\\logopng",
+		"Eventdate": "19",
+		"clientName": "Boby George",
+		"clientAddress": "18/9, Pillaiyar Kovil Street, Madukkur-614001",
+		"Eventdate1": "30",
+		"invDescription": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invRate": 1000,
+		"invQty": 10,
+		"DiscType": "Gold",
+		"TaxType": "GST Annual",
+		"TaxTypeP": "5",
+		"invNotes":"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invDate":"Oct 19, 2023",
+		"invClientName":"Boby George",
+		"invDueDate":"Oct 30, 2023"
+		
+	},
+	
+	{
+		"Comment": "TestCase 5.CreateInvoiceWithoutDiscoutPercentageCancel",
+		"filePath": "F:\\InvoiceLogo\\logopng",
+		"Eventdate": "19",
+		"clientName": "Boby George",
+		"clientAddress": "18/9, Pillaiyar Kovil Street, Madukkur-614001",
+		"Eventdate1": "30",
+		"invDescription": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invRate": 1000,
+		"invQty": 10,
+		"DiscType": "Gold",
+		"DiscTypeP": "5",
+		"TaxType": "GST Annual",
+		"TaxTypeP": "5",
+		"invNotes":"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invDate":"Oct 19, 2023",
+		"invClientName":"Boby George",
+		"invDueDate":"Oct 30, 2023"
+		
+	},
+	
+	
+	{
+		"Comment": "TestCase 6.Create Invoice Without Edit Tax Field",
+		"filePath": "F:\\InvoiceLogo\\logojpg",
+		"Eventdate": "18",
+		"clientName": "Dustin S",
+		"clientAddress": "36, Suppaiyah Nagar, Mannargudi-614001",
+		"Eventdate1": "30",
+		"invDescription": "Lorem ipsum is placeholder text commonly used in the graphic.",
+		"invRate": 2000,
+		"invQty": 10,
+		"DiscTypeP": "5",
+		"TaxType": "Annual Tax",
+		"TaxTypeP": "5",
+		"invNotes":"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+	
+		
+	},
+	
+	{
+		"Comment": "TestCase 7.Create Invoice Without Edit Tax Field Cancel",
+		"filePath": "F:\\InvoiceLogo\\logojpg",
+		"Eventdate": "18",
+		"clientName": "Dustin S",
+		"clientAddress": "36, Suppaiyah Nagar, Mannargudi-614001",
+		"Eventdate1": "30",
+		"invDescription": "Lorem ipsum is placeholder text commonly used in the graphic.",
+		"invRate": 2000,
+		"invQty": 10,
+		"DiscTypeP": "5",
+		"TaxType": "Annual Tax",
+		"TaxTypeP": "5",
+		"invNotes":"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+	
+		
+	},
+	
+	{
+		"Comment": "TestCase 8.Create Invoice Without Edit Invoice Tax Type",
+		"filePath": "F:\\InvoiceLogo\\logojpg",
+		"Eventdate": "20",
+		"clientName": "Yuvaraj Singh",
+		"clientAddress": "36, VOC Road, Kumbakonam - 612001",
+		"Eventdate1": "30",
+		"invDescription": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invRate": 1000,
+		"invQty": 10,
+		"DiscType": "Gold",
+		"DiscTypeP":"10",
+		"TaxTypeP": "5",
+		"invNotes":"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invDate":"Oct 20, 2023",
+		"invClientName":"Yuvaraj Singh",
+		"invDueDate":"Oct 30, 2023"
+		
+	},
+	
+	{
+		"Comment": "TestCase 9.Create Invoice Without Edit Invoice Tax Type Cancel",
+		"filePath": "F:\\InvoiceLogo\\logojpg",
+		"Eventdate": "20",
+		"clientName": "Yuvaraj Singh",
+		"clientAddress": "36, VOC Road, Kumbakonam - 612001",
+		"Eventdate1": "30",
+		"invDescription": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invRate": 1000,
+		"invQty": 10,
+		"DiscType": "Gold",
+		"DiscTypeP":"10",
+		"TaxTypeP": "5",
+		"invNotes":"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invDate":"Oct 20, 2023",
+		"invClientName":"Yuvaraj Singh",
+		"invDueDate":"Oct 30, 2023"
+		
+	},
+	
+	{
+		"Comment": "TestCase 10.Create Invoice Without Tax Percentage",
+		"filePath": "F:\\InvoiceLogo\\logopng",
+		"Eventdate": "21",
+		"clientName": "Rax Professional",
+		"clientAddress": "Rajaji Nagar, Mannargudi-614001",
+		"Eventdate1": "30",
+		"Eventmonth1": "October",
+		"Eventyear1": "2023",
+		"invDescription": "Lorem ipsum is placeholder text.",
+		"invRate": 1000,
+		"invQty": 10,
+		"DiscType": "Gold",
+		"DiscTypeP":"10",
+		"TaxTypeP": "5",
+		"TaxType": "GST Annual",
+		"invNotes":"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invDate":"Oct 21, 2023",
+		"invClientName":"Rax Professional",
+		"invDueDate":"Oct 30, 2023"
+		
+	},
+	
+	{
+		"Comment": "TestCase 11.Create Invoice Without Tax Percentage Cancel",
+		"filePath": "F:\\InvoiceLogo\\logopng",
+		"Eventdate": "21",
+		"clientName": "Rax Professional",
+		"clientAddress": "Rajaji Nagar, Mannargudi-614001",
+		"Eventdate1": "30",
+		"Eventmonth1": "October",
+		"Eventyear1": "2023",
+		"invDescription": "Lorem ipsum is placeholder text.",
+		"invRate": 1000,
+		"invQty": 10,
+		"DiscType": "Gold",
+		"DiscTypeP":"10",
+		"TaxTypeP": "5",
+		"TaxType": "GST Annual",
+		"invNotes":"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invDate":"Oct 21, 2023",
+		"invClientName":"Rax Professional",
+		"invDueDate":"Oct 30, 2023"
+		
+	},
+	
+	
+	{
+		"Comment": "TestCase 12.Create Invoice Without Notes",
+		"filePath": "F:\\InvoiceLogo\\logopng",
+		"Eventdate": "22",
+		"clientName": "Rax Professional",
+		"clientAddress": "",
+		"Eventdate1": "30",
+		"Eventmonth1": "October",
+		"Eventyear1": "2023",
+		"invDescription": "Lorem ipsum is placeholder text.",
+		"invRate": 1000,
+		"invQty": 10,
+		"DiscType": "Gold",
+		"DiscTypeP":"10",
+		"TaxType": "GST Annual",
+		"TaxTypeP": "5",
+		"invDate":"Oct 22, 2023",
+		"invClientName":"Rax Professional",
+		"invDueDate":"Oct 30, 2023"
+		
+	},
+	
+	{
+		"Comment": "TestCase 13.Create Invoice Without Notes Cancel",
+		"filePath": "F:\\InvoiceLogo\\logopng",
+		"Eventdate": "22",
+		"clientName": "Rax Professional",
+		"clientAddress": "",
+		"Eventdate1": "30",
+		"Eventmonth1": "October",
+		"Eventyear1": "2023",
+		"invDescription": "Lorem ipsum is placeholder text.",
+		"invRate": 1000,
+		"invQty": 10,
+		"DiscType": "Gold",
+		"DiscTypeP":"10",
+		"TaxType": "GST Annual",
+		"TaxTypeP": "5",
+		"invDate":"Oct 22, 2023",
+		"invClientName":"Rax Professional",
+		"invDueDate":"Oct 30, 2023"
+		
+	},
+	
+	
+	{
+		"Comment": "TestCase 14.Create Invoice With AllFields",
+		"filePath": "F:\\InvoiceLogo",
+		"Eventdate": "14",
+		"clientName": "Ananth Subramanian",
+		"clientAddress": "36, Suppaiyah Nagar, Mannargudi-614001",
+		"Eventdate1": "30",
+		"invDescription": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invRate": 1000,
+		"invQty": 10,
+		"DiscType": "Gold",
+		"DiscTypeP":"10",
+		"TaxType": "GST Annual",
+		"TaxTypeP": "5",
+		"invNotes":"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invDate":"Oct 14, 2023",
+		"invClientName":"Ananth Subramanian",
+		"invDueDate":"Oct 30, 2023"
+		
+	},
+	{
+		"Comment": "TestCase 15.Create Invoice With AllFields",
+		"filePath": "F:\\InvoiceLogo",
+		"Eventdate": "14",
+		"clientName": "Ananth Subramanian",
+		"clientAddress": "36, Suppaiyah Nagar, Mannargudi-614001",
+		"Eventdate1": "30",
+		"invDescription": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invRate": 1000,
+		"invQty": 10,
+		"DiscType": "Gold",
+		"DiscTypeP":"10",
+		"TaxType": "GST Annual",
+		"TaxTypeP": "5",
+		"invNotes":"Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+		"invDate":"Oct 14, 2023",
+		"invClientName":"Ananth Subramanian",
+		"invDueDate":"Oct 30, 2023"
+		
+	}
+]
