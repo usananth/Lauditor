@@ -24,7 +24,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 //import lauditor.PageObjectsModule.DocumentUploadFirmPages;
 import lauditor.pom.pages.CreateCalendarGMEventPage;
-import lauditor.pom.pages.CreateInvoicePage;
+
+import lauditor.pom.pages.CreateInvoicePageandView;
 import lauditor.pom.pages.CreateMeetingsPage;
 import lauditor.pom.pages.DashBoard;
 import lauditor.pom.pages.DocumentUploadFirmPages;
@@ -47,7 +48,7 @@ public class BaseClass {
 	public SingleTestCaseCalendarPage SingleTest;
 	public ViewMeetingsPage viewMeeting;
 	public MergePDFPage mergePDFPage;
-	public CreateInvoicePage createInvoice;
+	public CreateInvoicePageandView createInvoice;
 
 
 	public WebDriver initalize() throws IOException {
@@ -137,7 +138,7 @@ public class BaseClass {
 		viewMeeting = new ViewMeetingsPage(driver);
 		SingleTest= new SingleTestCaseCalendarPage(driver);
 		mergePDFPage=new MergePDFPage(driver);
-		createInvoice= new CreateInvoicePage(driver);
+		createInvoice= new CreateInvoicePageandView(driver);
 //		calendarViewMeetingsPage= new CalendarViewMeetingsPage(driver);
 //		CreateMeetigns=new CalendarViewMeetingsPage(driver);
 		return loginPage;

@@ -106,7 +106,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		}
 
 	}
-/*
+
 	@Test(dataProvider = "getData3", priority = 3)
 	public void DocumentUploadWithoutEditEnableDownloadCancel(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
@@ -4550,7 +4550,7 @@ public class DocumentUploadFirmTest extends BaseClass {
 		} finally {
 
 		}
-	} */
+	} 
 //******************************* # Data Provider Classes # ***********************************//
 
 	@DataProvider

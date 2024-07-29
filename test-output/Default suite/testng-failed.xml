@@ -3,21 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="lauditor.test.pages.CreateInvoiceTest">
+      <class name="lauditor.test.pages.ViewInoviceTest">
         <methods>
-          <include name="CreateInvoiceWithoutDiscountTypeTaxType" invocation-numbers="0"/>
-          <include name="CreateInvoiceWithoutDiscoutPercentageCancel" invocation-numbers="0"/>
           <include name="launchApplication"/>
-          <include name="CreateInvoiceWithoutTaxTypePercentage" invocation-numbers="0"/>
-          <include name="CreateInvoiceWithoutDiscountTypeTaxTypeCancel" invocation-numbers="0"/>
           <include name="down"/>
-          <include name="CreateInvoiceWithoutDiscountFieldEdit" invocation-numbers="0"/>
-          <include name="CreateInvoiceWithoutDiscoutPercentage" invocation-numbers="0"/>
-          <include name="CreateInvoiceWithoutNotes" invocation-numbers="0"/>
-          <include name="CreateInvoiceWithoutTaxType"/>
-          <include name="CreateInvoiceWithoutDiscTypeCancel" invocation-numbers="0"/>
+          <include name="ViewInvoiceCancel" invocation-numbers="0"/>
         </methods>
-      </class> <!-- lauditor.test.pages.CreateInvoiceTest -->
+      </class> <!-- lauditor.test.pages.ViewInoviceTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

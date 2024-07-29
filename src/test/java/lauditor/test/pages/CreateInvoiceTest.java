@@ -78,25 +78,25 @@ public class CreateInvoiceTest extends BaseClass {
 			createInvoice.selectClient(input.get("clientName"));
 			createInvoice.clientAddress(input.get("clientAddress"));
 			createInvoice.pageDown2();
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			createInvoice.dueDatepicker(input.get("Eventdate1"));
 			Thread.sleep(2000);
 			createInvoice.invoiceDescription(input.get("invDescription"));
 			createInvoice.invoiceRate(input.get("invRate"));
 			createInvoice.invoiceQuantity(input.get("invQty"));
 			createInvoice.invoiceNotes(input.get("invNotes"));
-			createInvoice.invoiceSaveButton();
-			Thread.sleep(4000);
-			createInvoice.ScrollUpInv();
-			createInvoice.actionButton();
-			createInvoice.viewDetails();
-			Thread.sleep(3000);
-			createInvoice.assertInvDate(input.get("invDate"));
-			createInvoice.assertClientName(input.get("invClientName"));
-			createInvoice.assertDueDate(input.get("invDueDate"));
-			createInvoice.scrollDown();
-			Thread.sleep(2000);
 			createInvoice.invoiceCancel();
+			Thread.sleep(3000);
+//			createInvoice.actionButton();
+//			createInvoice.viewDetails();
+//			Thread.sleep(3000);
+//			createInvoice.assertInvDate(input.get("invDate"));
+//			createInvoice.assertClientName(input.get("invClientName"));
+//			createInvoice.assertDueDate(input.get("invDueDate"));
+//			createInvoice.scrollDown();
+//			Thread.sleep(2000);
+//			createInvoice.invoiceCancel();
+			
 			
 		} finally {
 
@@ -107,7 +107,7 @@ public class CreateInvoiceTest extends BaseClass {
 	
 	
 	@Test(dataProvider = "getData2", priority = 0)
-	public void CreateInvoiceWithoutDiscountFieldEdit(HashMap<String, String> input)
+	public void CreateInvoiceWithoutEditDiscountField(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
 
 		try {
@@ -155,11 +155,13 @@ public class CreateInvoiceTest extends BaseClass {
 	}
 	
 	@Test(dataProvider = "getData3", priority = 0)
-	public void CreateInvoiceWithoutDiscountFieldEditCancel(HashMap<String, String> input)
+	public void CreateInvoiceWithoutEditDiscountFieldCancel(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
 
 		try {
-			createInvoice.ScrollUpInv1();
+			createInvoice.pageDown1();
+			createInvoice.invoiceMenu();
+			//createInvoice.ScrollUpInv1();
 			createInvoice.createInvoice();
 			createInvoice.logoAreaXbutton();
 			createInvoice.uploadLogo();
@@ -182,6 +184,7 @@ public class CreateInvoiceTest extends BaseClass {
 			createInvoice.taxTypePercentage(input.get("TaxTypeP"));
 			createInvoice.invoiceNotes(input.get("invNotes"));
 			createInvoice.invoiceCancel();
+			Thread.sleep(3000);
 		} finally {
 
 			createInvoice.invoiceMenu();
@@ -190,11 +193,13 @@ public class CreateInvoiceTest extends BaseClass {
 	}
 
 	@Test(dataProvider = "getData4", priority = 0)
-	public void CreateInvoiceWithoutDiscoutPercentage(HashMap<String, String> input)
+	public void CreateInvoiceWithoutEditDiscountPercentage(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
 
 		try {
-			createInvoice.ScrollUpInv1();
+			createInvoice.pageDown1();
+			createInvoice.invoiceMenu();
+			//createInvoice.ScrollUpInv1();
 			createInvoice.createInvoice();
 			createInvoice.logoAreaXbutton();
 			createInvoice.uploadLogo();
@@ -243,7 +248,10 @@ public class CreateInvoiceTest extends BaseClass {
 			throws InterruptedException, AWTException, IOException {
 
 		try {
-			createInvoice.ScrollUpInv1();
+			
+			createInvoice.pageDown1();
+			createInvoice.invoiceMenu();
+			//createInvoice.ScrollUpInv1();
 			createInvoice.createInvoice();
 			createInvoice.logoAreaXbutton();
 			createInvoice.uploadLogo();
@@ -265,21 +273,8 @@ public class CreateInvoiceTest extends BaseClass {
 			createInvoice.invTaxType(input.get("TaxType"));
 			createInvoice.taxTypePercentage(input.get("TaxTypeP"));
 			createInvoice.invoiceNotes(input.get("invNotes"));
-			createInvoice.invoiceSaveButton();
-			Thread.sleep(4000);
-			createInvoice.ScrollUpInv();
-			createInvoice.actionButton();
-			createInvoice.viewDetails();
-			Thread.sleep(2000);
-			createInvoice.assertInvDate(input.get("invDate"));
-			createInvoice.assertClientName(input.get("invClientName"));
-			createInvoice.assertDueDate(input.get("invDueDate"));
-			createInvoice.scrollDown();
-			Thread.sleep(2000);
-			createInvoice.invoiceDownload();
-			Thread.sleep(2000);
-			createInvoice.downloadOkay();
-
+			createInvoice.invoiceCancel();
+			Thread.sleep(3000);
 		} finally {
 
 			createInvoice.invoiceMenu();
@@ -289,11 +284,15 @@ public class CreateInvoiceTest extends BaseClass {
 	
 
 	@Test(dataProvider = "getData6", priority = 0)
-	public void CreateInvoiceWithoutTaxType(HashMap<String, String> input)
+	public void CreateInvoiceWithoutEditTaxTypeField(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
 
 		try {
-			createInvoice.ScrollUpInv1();
+			
+			
+			createInvoice.pageDown1();
+			createInvoice.invoiceMenu();
+		//	createInvoice.ScrollUpInv1();
 			createInvoice.invoiceMenu();
 			createInvoice.createInvoice();
 			createInvoice.logoAreaXbutton();
@@ -333,17 +332,20 @@ public class CreateInvoiceTest extends BaseClass {
 
 		} finally {
 
-		//	createInvoice.invoiceMenu();
+			createInvoice.invoiceMenu();
 		}
 
 	}
 	
-	@Test(dataProvider = "getData4", priority = 0)
-	public void CreateInvoiceWithoutDiscTypeCancel(HashMap<String, String> input)
+	@Test(dataProvider = "getData7", priority = 0)
+	public void CreateInvoiceWithoutDiscTypeFieldCancel(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
 
 		try {
-			createInvoice.ScrollUpInv1();
+			
+			createInvoice.pageDown1();
+			createInvoice.invoiceMenu();
+			//createInvoice.ScrollUpInv1();
 			createInvoice.createInvoice();
 			createInvoice.logoAreaXbutton();
 			createInvoice.uploadLogo();
@@ -361,11 +363,12 @@ public class CreateInvoiceTest extends BaseClass {
 			createInvoice.invoiceRate(input.get("invRate"));
 			createInvoice.invoiceQuantity(input.get("invQty"));
 			createInvoice.invDiscountType(input.get("DiscType"));
-			//createInvoice.disTypePercentage(input.get("DiscTypeP"));
-			createInvoice.invTaxType(input.get("TaxType"));
+			createInvoice.disTypePercentage(input.get("DiscTypeP"));
+			//createInvoice.invTaxType(input.get("TaxType"));
 			createInvoice.taxTypePercentage(input.get("TaxTypeP"));
 			createInvoice.invoiceNotes(input.get("invNotes"));
 			createInvoice.invoiceCancel();
+			Thread.sleep(3000);
 		} finally {
 
 			createInvoice.invoiceMenu();
@@ -374,12 +377,14 @@ public class CreateInvoiceTest extends BaseClass {
 	}
 
 
-	@Test(dataProvider = "getData5", priority = 0)
-	public void CreateInvoiceWithoutTaxTypePercentage(HashMap<String, String> input)
+	@Test(dataProvider = "getData8", priority = 0)
+	public void CreateInvoiceWithoutEditTaxTypePercentage(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
 
 		try {
-			createInvoice.ScrollUpInv1();
+			createInvoice.pageDown1();
+			createInvoice.invoiceMenu();
+			//createInvoice.ScrollUpInv1();
 			createInvoice.invoiceMenu();
 			createInvoice.createInvoice();
 			createInvoice.logoAreaXbutton();
@@ -424,13 +429,57 @@ public class CreateInvoiceTest extends BaseClass {
 
 	}
 	
+
+	@Test(dataProvider = "getData9", priority = 0)
+	public void CreateInvoiceWithoutEditTaxTypePercentageCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			
+			createInvoice.pageDown1();
+			createInvoice.invoiceMenu();
+			//createInvoice.ScrollUpInv1();
+			createInvoice.invoiceMenu();
+			createInvoice.createInvoice();
+			createInvoice.logoAreaXbutton();
+			createInvoice.uploadLogo();
+			createInvoice.fileUpload(input.get("filePath"));
+			Thread.sleep(3000);
+			createInvoice.invoiceDatepicker(input.get("Eventdate"));
+			Thread.sleep(2000);
+			createInvoice.selectClient(input.get("clientName"));
+			createInvoice.clientAddress(input.get("clientAddress"));
+			createInvoice.pageDown2();
+			Thread.sleep(2000);
+			createInvoice.dueDatepicker(input.get("Eventdate1"));
+			Thread.sleep(2000);
+			createInvoice.invoiceDescription(input.get("invDescription"));
+			createInvoice.invoiceRate(input.get("invRate"));
+			createInvoice.invoiceQuantity(input.get("invQty"));
+			createInvoice.invDiscountType(input.get("DiscType"));
+			createInvoice.disTypePercentage(input.get("DiscTypeP"));
+			createInvoice.invTaxType(input.get("TaxType"));
+			//createInvoice.taxTypePercentage(input.get("TaxTypeP"));
+			createInvoice.invoiceNotes(input.get("invNotes"));
+			createInvoice.invoiceCancel();
+			Thread.sleep(3000);
+
+		} finally {
+
+			createInvoice.invoiceMenu();
+		}
+
+	}
 	
-	@Test(dataProvider = "getData5", priority = 0)
+	
+	@Test(dataProvider = "getData10", priority = 0)
 	public void CreateInvoiceWithoutNotes(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
 
 		try {
-			createInvoice.ScrollUpInv1();
+			createInvoice.pageDown1();
+			createInvoice.invoiceMenu();
+			//createInvoice.ScrollUpInv1();
 			createInvoice.invoiceMenu();
 			createInvoice.createInvoice();
 			createInvoice.logoAreaXbutton();
@@ -475,12 +524,54 @@ public class CreateInvoiceTest extends BaseClass {
 
 	}
 	
-	@Test(dataProvider = "getData5", priority = 0)
-	public void CreateInvoiceWithoutEditTaxField(HashMap<String, String> input)
+	@Test(dataProvider = "getData11", priority = 0)
+	
+	public void CreateInvoiceWithoutNotesCancel(HashMap<String, String> input)
 			throws InterruptedException, AWTException, IOException {
 
 		try {
-			createInvoice.ScrollUpInv1();
+			createInvoice.pageDown1();
+			createInvoice.invoiceMenu();
+			//createInvoice.ScrollUpInv1();
+			createInvoice.invoiceMenu();
+			createInvoice.createInvoice();
+			createInvoice.logoAreaXbutton();
+			createInvoice.uploadLogo();
+			createInvoice.fileUpload(input.get("filePath"));
+			Thread.sleep(3000);
+			createInvoice.invoiceDatepicker(input.get("Eventdate"));
+			Thread.sleep(2000);
+			createInvoice.selectClient(input.get("clientName"));
+			createInvoice.clientAddress(input.get("clientAddress"));
+			createInvoice.pageDown2();
+			Thread.sleep(2000);
+			createInvoice.dueDatepicker(input.get("Eventdate1"));
+			Thread.sleep(2000);
+			createInvoice.invoiceDescription(input.get("invDescription"));
+			createInvoice.invoiceRate(input.get("invRate"));
+			createInvoice.invoiceQuantity(input.get("invQty"));
+			createInvoice.invDiscountType(input.get("DiscType"));
+			createInvoice.disTypePercentage(input.get("DiscTypeP"));
+			createInvoice.invTaxType(input.get("TaxType"));
+			createInvoice.taxTypePercentage(input.get("TaxTypeP"));
+			//createInvoice.invoiceNotes(input.get("invNotes"));
+			createInvoice.invoiceCancel();
+			Thread.sleep(3000);
+		} finally {
+
+			createInvoice.invoiceMenu();
+		}
+
+	}
+	
+	@Test(dataProvider = "getData12", priority = 0)
+	public void CreateInvoiceEditAllFields(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			createInvoice.pageDown1();
+			createInvoice.invoiceMenu();
+			//createInvoice.ScrollUpInv1();
 			createInvoice.invoiceMenu();
 			createInvoice.createInvoice();
 			createInvoice.logoAreaXbutton();
@@ -524,6 +615,44 @@ public class CreateInvoiceTest extends BaseClass {
 		}
 	}
 	
+	@Test(dataProvider = "getData13", priority = 0)
+	public void CreateInvoiceEditAllFieldsCancel(HashMap<String, String> input)
+			throws InterruptedException, AWTException, IOException {
+
+		try {
+			createInvoice.pageDown1();
+			createInvoice.invoiceMenu();
+			//createInvoice.ScrollUpInv1();
+			createInvoice.invoiceMenu();
+			createInvoice.createInvoice();
+			createInvoice.logoAreaXbutton();
+			createInvoice.uploadLogo();
+			createInvoice.fileUpload(input.get("filePath"));
+			Thread.sleep(3000);
+			createInvoice.invoiceDatepicker(input.get("Eventdate"));
+			Thread.sleep(2000);
+			createInvoice.selectClient(input.get("clientName"));
+			createInvoice.clientAddress(input.get("clientAddress"));
+			createInvoice.pageDown2();
+			Thread.sleep(2000);
+			createInvoice.dueDatepicker(input.get("Eventdate1"));
+			Thread.sleep(2000);
+			createInvoice.invoiceDescription(input.get("invDescription"));
+			createInvoice.invoiceRate(input.get("invRate"));
+			createInvoice.invoiceQuantity(input.get("invQty"));
+			createInvoice.invDiscountType(input.get("DiscType"));
+			createInvoice.disTypePercentage(input.get("DiscTypeP"));
+			//createInvoice.invTaxType(input.get("TaxType"));
+			createInvoice.taxTypePercentage(input.get("TaxTypeP"));
+			createInvoice.invoiceNotes(input.get("invNotes"));
+			createInvoice.invoiceCancel();
+			Thread.sleep(3000);
+
+		} finally {
+
+			createInvoice.invoiceMenu();
+		}
+	}
 	// *************************** DATA PROVIDER CLASEES ********************************//
 	@DataProvider
 	public Object[][] getData0() throws IOException {

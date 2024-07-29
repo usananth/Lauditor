@@ -20,10 +20,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import lauditor.abstractclass.AbstractClass;
 
-public class CreateInvoicePage extends AbstractClass {
+public class CreateInvoicePageandView extends AbstractClass {
 	WebDriver driver;
 
-	public CreateInvoicePage(WebDriver driver) {
+	public CreateInvoicePageandView(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -77,6 +77,24 @@ public class CreateInvoicePage extends AbstractClass {
 		createInvoice.click();
 	}
 
+	public void viewInvoice() throws InterruptedException {
+		Thread.sleep(2000);
+		visibilityOfAllElements(viewInvoice);
+		viewInvoice.click();
+	}
+
+	// Invoice search bar
+	@FindBy(xpath = "(//input[@placeholder='Search Invoice'])[1]")
+	WebElement searchInvoiceField;
+
+	public void searchInvoice(String invNumber) throws InterruptedException {
+		Thread.sleep(2000);
+		visibilityOfElementWait(searchInvoiceField);
+		searchInvoiceField.clear();
+		searchInvoiceField.sendKeys(invNumber);
+
+	}
+
 	public void uploadLogo() throws InterruptedException {
 		Thread.sleep(2000);
 		visibilityOfAllElements(addLogoArea);
@@ -103,7 +121,7 @@ public class CreateInvoicePage extends AbstractClass {
 	@FindBy(xpath = "//td[@role='gridcell']")
 	List<WebElement> EventDates;
 
-	//  Client Input
+	// Client Input
 	@FindBy(xpath = "//input[@placeholder='Type to select']")
 	WebElement clientInput;
 
@@ -180,6 +198,8 @@ public class CreateInvoicePage extends AbstractClass {
 	@FindBy(xpath = "//button[text()='Cancel']")
 	WebElement InvCancel;
 
+	// Invoice View Menu
+
 	public void invoiceCancel() throws InterruptedException {
 		Thread.sleep(2000);
 		visibilityOfAllElements(InvCancel);
@@ -231,6 +251,25 @@ public class CreateInvoicePage extends AbstractClass {
 		String expDueDate = invDueAssert.getText();
 		assertEquals(Actual, expDueDate);
 	}
+	
+	//Assert Invoice Name
+	@FindBy(xpath = "(//div[@class='alertpara alertparatxt sharewith'])[1]")
+	WebElement assertClientName;
+	
+	public void assertInvioceName(String Actual) throws InterruptedException {
+		Thread.sleep(2000);
+		String expInvoiceName= assertClientName.getText();
+		assertEquals(Actual, expInvoiceName);
+	}
+
+// Action share 
+	@FindBy(xpath = "//a[text()='Share']")
+	WebElement shareMenu;
+
+	public void shareMenu() {
+		visibilityOfAllElements(shareMenu);
+		shareMenu.click();
+	}
 
 	// Assert Date of Invoice
 	@FindBy(xpath = "//div[@class='input-group court form-control textbox invoiceCls']")
@@ -267,17 +306,18 @@ public class CreateInvoicePage extends AbstractClass {
 
 	// Select Client
 	public void selectClient(String selectClient) throws InterruptedException {
- 
-	//	driver.findElement(By.cssSelector("input[placeholder='Type to select']"));
-	//	WebElement scElement=driver.findElement(By.xpath("//input[@placeholder='Type to select']"));
+
+		// driver.findElement(By.cssSelector("input[placeholder='Type to select']"));
+		// WebElement scElement=driver.findElement(By.xpath("//input[@placeholder='Type
+		// to select']"));
 		Thread.sleep(2000);
 		clientInput.sendKeys(selectClient);
 		Thread.sleep(1000);
 		clientInput.sendKeys(Keys.ARROW_DOWN);
 		Thread.sleep(1000);
 		clientInput.sendKeys(Keys.ENTER);
-		}	
-		
+	}
+
 	public void invoiceDatepicker(String EDate) throws InterruptedException {
 		Thread.sleep(3000);
 		invoiceDate.click();
@@ -285,8 +325,7 @@ public class CreateInvoicePage extends AbstractClass {
 	}
 
 	public void dueDatepicker(String EDate1) throws InterruptedException {
-		Thread.sleep(2000);
-		visibilityOfAllElements(dueDate);
+		Thread.sleep(3000);
 		dueDate.click();
 		driver.findElement(By.xpath("//*[text()='" + EDate1 + "']")).click();
 	}
@@ -355,7 +394,7 @@ public class CreateInvoicePage extends AbstractClass {
 	public void invoiceCancelButton() throws InterruptedException {
 		Thread.sleep(2000);
 		visibilityOfAllElements(invoiceCancelBtn);
-		invoiceSaveBtn.click();
+		invoiceCancelBtn.click();
 	}
 
 }
